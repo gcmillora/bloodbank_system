@@ -5,32 +5,147 @@
   <title>User Dashboard</title>
   <!-- CSS -->
   <style>
+    *{padding: 0; margin: 0;}
     .sidenav{
       height: 100%;
-      width: 200px;
+      width: 250px;
       position: fixed;
       background-color: #F2F2F2;
       left: 0;
       top: 0;
       overflow-x: hidden;
       padding-top: 20px;
+      font-family: sans-serif;
     }
 
-    .sidenav a{
-      padding: 6px 8px 6px 16px;
+    body{
+      font-family: sans-serif;
+    }
+
+    .a{
+      padding: 17px 8px 12px 50px;
       text-decoration: none;
-      font-size: 25px;
-      color: #000000;
+      font-size: 18px;
+      color: #4D4D4D;
       display: block;
     }
-  </style/>
+
+    #first-sidebar{
+      padding: 150px 8px 6px 50px;
+    }
+
+    .sidenav img{
+      width: 15%;
+      padding-right: 20px;
+      vertical-align: middle;
+    }
+
+    .search{
+      box-sizing: border-box;
+      background-color: #D9595C;
+      border-style: none;
+      border-color: #D9595C;
+      border-width: 0.2px;
+      border-radius: 15px;
+    }
+
+    .search a{
+      color:white;
+    }
+
+    #sidebar-bottom{
+      padding-left: 15px;
+      padding-top:240px;
+      font-style: thin;
+    }
+
+    #log-out{
+      padding-left: 80px;
+      color: #D9595C;
+    }
+
+    .header{
+      margin-left: 200px;
+      padding: 80px;
+      background: #D9595C;
+      color: white;
+    }
+
+    .table-header{
+      padding-top: 30px;
+      padding-left: 320px;
+    }
+
+    #search-box{
+      padding-left: 550px;
+    }
+
+    .table-header input[type=text]{
+      font-size: 17px;
+      color: #2C2C2C;
+      padding: 6px 6px 6px 6px;
+      border-style: solid;
+      border-radius: 5px;
+      border-color: #E0E0E0;
+    }
+
+    .content{
+      padding-top: 20px;
+      padding-left: 320px;
+    }
+
+    table.table-content th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    table.table-content td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+  </style>
 </head>
 <body>
   <div class="sidenav">
-    <a href="#">Donate</a>
-    <a href="#">Request</a>
-    <a href="#">Search</a>
+    <div class="donate">
+      <a href="#" id="first-sidebar" class="a"><img src="medical-center.png">Donate</a>
+    </div>
+    <div class="request">
+      <a href="#" class="a"><img src="volunteer.png">Request</a>
+    </div>
+    <div class="search">
+      <a href="#" id="third-sidebar" class="a"><img src="blood-transfusion.png">Search</a>
+    </div>
+    <table id="sidebar-bottom">
+      <th><a href="#">Settings</a></th>
+      <th id="log-out"><a href="#">Log-out</a></th>
+    </table>
   </div>
 
+  <div class="header">
+  </div>
+
+  <div class="table-header">
+    <table>
+      <th><h2> Hospitals</h2></th>
+      <th id="search-box"><input type="text" placeholder="Search.."></th>
+    </table>
+  </div>
+
+  <div class="content">
+    <table class="table-content" style="width: 90%">
+      <tr>
+        <th>Hospital</th>
+        <th>Location</th>
+        <th>Total Blood Bags</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Lorem Ipsum Hospital</td>
+
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
