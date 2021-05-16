@@ -37,7 +37,7 @@
     }
 
     #first-sidebar{
-      margin-top: 9.375em;
+      padding: 9.375em 0.5em 0.375em 3.125em;
     }
 
     .sidenav img{
@@ -46,7 +46,7 @@
       vertical-align: middle;
     }
 
-    .donate{
+    .request{
       box-sizing: border-box;
       background-color: #D9595C;
       border-style: none;
@@ -55,7 +55,7 @@
       border-radius: 0.9375em;
     }
 
-    .donate a{
+    .request a{
       color:white;
     }
 
@@ -89,12 +89,20 @@
 
     #dropdown{
       border-radius: 5px;
-      width: 60%;
+      width: 30%;
       border-color: #E0E0E0;
       padding: 6px 6px 6px 6px;
     }
-
+    .first-question{
+      padding-top: 20px;
+    }
     .second-question{
+      padding-top: 20px;
+    }
+    .third-question{
+      padding-top: 20px;
+    }
+    .fourth-question{
       padding-top: 20px;
     }
 
@@ -107,17 +115,23 @@
       width: 30%;
       font-family: sans-serif;
     }
-
+    .first-question input{
+      border: 1px solid #E0E0E0;
+      border-radius: 5px;
+      padding: 6px 6px 6px 6px
+    }
     .second-question input{
       border: 1px solid #E0E0E0;
       border-radius: 5px;
+      padding: 6px 6px 6px 6px
     }
 
     .info{
+      width: 50%;
       padding-top: 30px;
     }
 
-    .info h4{
+    .info h2{
       padding-top: 15px;
       color: #D9595C;
     }
@@ -153,10 +167,10 @@
       <a href="user-dashboard-donate.html" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
     </div>
     <div class="request">
-      <a href="user-dashboard-request.html" class="a"><img src="icons/menu/volunteer.png">Request</a>
+      <a href="user-dashboard-request.html" id="second-sidebar" class="a"><img src="icons/menu/volunteer.png">Request</a>
     </div>
     <div class="search">
-      <a href="user-dashboard.html" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+      <a href="user-dashboard.html"  class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
     </div>;
     <div class="sidebar-bottom">
       <table>
@@ -167,31 +181,52 @@
   </div>
 
   <div class="content">
+    <form>
     <div class="first-question">
-      <h2>Where to donate?</h2>
-      <div class="location">
-        <select name="location" id="dropdown">
-        <option value="Westminster">Westminster</option>
-        </select>
+      <div class="fullname">
+        <h3>Full Name</p>
+        <input type="text" id="full-name" name="full-name">
       </div>
     </div>
     <div class="second-question">
-      <h2>When will you donate?</h2>
-      <div class="date">
-        <input type="date" id="donate-date" name="donate-date">
+      <div class="fullname">
+        <h3>Address</p>
+        <input type="text" id="address" name="address">
       </div>
     </div>
-    <div class="info">
-      <h2>How to donate?</h2>
-      <h4>How often can a person donate?</h4>
-      <p>A healthy individual may donate every three months.</p>
-      <h4>Can a person who has tattoo or body piercing still donate blood?</h4>
-      <p>If the tattooing procedure or the piercing was done a year ago, he/she may donate. This is also applicable to acupuncture, and other procedures involving needles.</p>
-      <h4>How long will it take to donate blood?</h4>
-      <p>The whole process of blood donation, from the registration up to the recovery, will only take an average of 30 minutes.</p>
+    <div class="third-question">
+      <div class="bloodtype">
+        <h3>Blood Type</p>
+          <select name="bldtype" id="dropdown">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+      </div>
+    </div>
+    <div class="fourth-question">
+      <div class="hospital">
+        <h3>Hospital</p>
+          <select name="location" id="dropdown">
+            <option value="Westminster">Westminster</option>
+          </select>
+      </div>
     </div>
     <div class="appointment">
-      <button type="button">Book Date</button>
+      <button type="button">Request</button>
+    </div>
+    <div class="info">
+      <h2>Things to Remember</h2>
+      <p>Hydrate and eat a healthy meal before your donation. It is important that before giving blood donors drink plenty of fluids (an extra four 8-ounce glasses of fluids) and eat nutritious foods, rich in iron and vitamin C such as red meat, fish, poultry, beans spinach, iron-fortified cereals or raisins.</p>
+      <br>
+      <p>You’re never too old to donate blood. While in most states, you must be at least 17 years old to donate blood, there is no upper age limit. In fact, many elderly individuals are some of our most dedicated blood donors, and we encourage others to join them in helping ensure blood products are available for people in need.</p>
+      <br>
+      <p> Seasonal illnesses like the flu can affect a blood donor’s ability to give. Most medication will not disqualify you from being able to donate, but if you have questions please visit RedCrossBlood.org.</p>
     </div>
   </div>
 </body>
