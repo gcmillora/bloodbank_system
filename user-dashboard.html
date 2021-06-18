@@ -1,167 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user-dashboard.css">
   <title>User Dashboard</title>
-  <!-- CSS -->
-  <style>
-    /*General*/
-
-    *{padding: 0; margin: 0;}
-
-    body{
-      font-family: sans-serif;
-      font-size: 16px;
-    }
-
-    /* Menu */
-    .sidenav{
-      height: 100%;
-      width: 15.625em;
-      position: fixed;
-      background-color: #F2F2F2;
-      left: 0;
-      top: 0;
-      overflow-x: hidden;
-      padding-top: 1.25em;
-      font-family: sans-serif;
-    }
-
-
-    .a{
-      padding: 1.0625em 0.5em 0.75em 3.125em;
-      text-decoration: none;
-      font-size: 1.125em;
-      color: #4D4D4D;
-      display: block;
-    }
-
-    #first-sidebar{
-      padding: 9.375em 0.5em 0.375em 3.125em;
-    }
-
-    .sidenav img{
-      width: 15%;
-      padding-right: 1.25em;
-      vertical-align: middle;
-    }
-
-    .search{
-      box-sizing: border-box;
-      background-color: #D9595C;
-      border-style: none;
-      border-color: #D9595C;
-      border-width: 0.0125em;
-      border-radius: 0.9375em;
-    }
-
-    .search a{
-      color:white;
-    }
-
-    .sidebar-bottom{
-      position: absolute;
-      top: 35em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
-    }
-
-    .sidebar-bottom a{
-      text-decoration: none;
-      color: black;
-    }
-
-    #log-out{
-      padding-left: 5.3125em;
-      color: #D9595C;
-    }
-
-    /* Banner */
-    .header{
-      margin-left: 12.5em;
-      padding: 5em;
-      background: #D9595C;
-      color: white;
-    }
-
-    /*Padding for title of table and Search*/
-    .table-header{
-      padding-top: 1.875em;
-      padding-left: 20em;
-    }
-
-    /* Search box padding*/
-    #search-box{
-      /*padding-left: 34.375em;*/
-      position: absolute;
-      right: 6.0625em;
-    }
-
-    /* Search box design*/
-    .table-header input[type=text]{
-      font-size: 1.0625em;
-      color: #2C2C2C;
-      padding: 0.375em 0.375em 0.375em 0.375em;
-      border-style: solid;
-      border-radius: 0.3125em;
-      border-color: #E0E0E0;
-    }
-
-    /* Padding for table div*/
-    .content{
-      padding-top: 1.25em;
-      padding-left: 20em;
-    }
-
-    /* Table CSS*/
-    table.table-content{
-      border: 0.0625em solid #E0E0E0;
-      border-radius: 0.25em;
-      border-collapse: separate;
-      border-spacing: 0;
-      text-align: center;
-      E0E0E0
-    }
-
-    table.table-content th{
-       background-color: #F1F1F1;
-    }
-
-    table.table-content th:first-child {
-    border-radius: 0.1875em 0 0 0;
-    }
-
-    table.table-content th:last-child {
-    border-radius: 0 0.1875em 0 0;
-    }
-
-    table.table-content th:only-child{
-      border-radius: 0.25em 0.25em 0 0;
-    }
-
-    table.table-content th, td {
-      border-bottom: 0.0625em solid #E0E0E0;
-      padding: 0.9375em;
-    }
-  </style>
 </head>
 <body>
   <!--MENU-->
   <div class="sidenav">
     <div class="donate">
-      <a href="user-dashboard-donate.html" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
+      <a href="#" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
     </div>
     <div class="request">
-      <a href="user-dashboard-request.html" class="a"><img src="icons/menu/volunteer.png">Request</a>
+      <a href="#" class="a"><img src="icons/menu/volunteer.png">Request</a>
     </div>
     <div class="search">
-      <a href="user-dashboard.html" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+      <a href="#" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
     </div>
     <div class="sidebar-bottom">
       <table>
         <th><a href="#">Settings</a></th>
-        <th><a href="login.html" id="log-out">Log-out</a></th>
+        <th><a href="#" id="log-out">Log-out</a></th>
       </table>
     </div>
   </div>
