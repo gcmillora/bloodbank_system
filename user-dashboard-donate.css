@@ -1,0 +1,171 @@
+/*General*/
+
+    *{padding: 0; margin: 0;}
+
+    body{
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+
+    /* Menu */
+    .sidenav{
+      height: 100%;
+      width: 15.625em;
+      position: fixed;
+      background-color: #F2F2F2;
+      left: 0;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 1.25em;
+      font-family: sans-serif;
+    }
+
+
+    .a{
+      padding: 1.0625em 0.5em 0.75em 3.125em;
+      text-decoration: none;
+      font-size: 1.125em;
+      color: #4D4D4D;
+      display: block;
+    }
+
+    #first-sidebar{
+      padding: 9.375em 0.5em 0.375em 3.125em;
+    }
+
+    .sidenav img{
+      width: 15%;
+      padding-right: 1.25em;
+      vertical-align: middle;
+    }
+
+    .search{
+      box-sizing: border-box;
+      background-color: #D9595C;
+      border-style: none;
+      border-color: #D9595C;
+      border-width: 0.0125em;
+      border-radius: 0.9375em;
+    }
+
+    .search a{
+      color:white;
+    }
+
+    .sidebar-bottom{
+      position: absolute;
+      top: 38em;
+      left: 1em;
+      /*padding-left: 0.9375em;
+      padding-top: 14em;*/
+    }
+
+    .sidebar-bottom a{
+      text-decoration: none;
+      color: black;
+    }
+
+    #log-out{
+      padding-left: 5.3125em;
+      color: #D9595C;
+    }
+
+    /*Content*/
+    .content{
+      padding-left: 350px;
+      padding-top: 6em; 
+    }
+
+    .location{
+      padding-top: 10px;
+    }
+
+    #dropdown{
+      border-radius: 5px;
+      width: 63%;
+      border-color: #E0E0E0;
+      padding: 6px 6px 6px 6px;
+    }
+
+    .second-question{
+      padding-top: 20px;
+    }
+
+    .date{
+      padding-top: 10px;
+    }
+
+    #donate-date{    
+      padding: 6px 6px 6px 6px;
+      width: 30%;
+      font-family: sans-serif;
+    }
+
+    .second-question input{
+      border: 1px solid #E0E0E0;
+      border-radius: 5px;
+    }
+
+    .info{
+      padding-top: 30px;
+    }
+
+    .info h4{
+      padding-top: 15px;
+      color: #D9595C;
+    }
+
+    .info p{
+      padding-top: 10px;
+    }
+
+    .appointment{
+      padding-top: 20px;
+    }
+
+    .content button{
+      width: 18%;
+      padding: 10px 10px 10px 10px;
+      border: 1px solid #D9595C;
+      background-color: #D9595C;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .content button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    @media only screen and (min-width: 1920px){
+      .sidenav{
+        padding-top: 16em;
+      }
+
+      .sidebar-bottom{
+        top: 62.5em;
+      }
+
+      .content{
+        padding-top: 17em;
+      }
+
+      .content button{
+        width: 10%;
+      }
+    }
+
+    @media only screen and (min-width: 2560px){
+      .sidenav{
+        padding-top: 30em;
+      }
+
+      .sidebar-bottom{
+        top: 95em;
+      }
+
+      .content{
+        padding-top: 19%;
+      }
+
+    }

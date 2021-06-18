@@ -1,171 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user-dashboard-donate.css">
   <title>Donate</title>
-  <!-- CSS -->
-  <style>
-    /*General*/
-
-    *{padding: 0; margin: 0;}
-
-    body{
-      font-family: sans-serif;
-      font-size: 16px;
-    }
-
-    /* Menu */
-    .sidenav{
-      height: 100%;
-      width: 15.625em;
-      position: fixed;
-      background-color: #F2F2F2;
-      left: 0;
-      top: 0;
-      overflow-x: hidden;
-      padding-top: 1.25em;
-      font-family: sans-serif;
-    }
-
-
-    .a{
-      padding: 1.0625em 0.5em 0.75em 3.125em;
-      text-decoration: none;
-      font-size: 1.125em;
-      color: #4D4D4D;
-      display: block;
-    }
-
-    #first-sidebar{
-      margin-top: 9.375em;
-    }
-
-    .sidenav img{
-      width: 15%;
-      padding-right: 1.25em;
-      vertical-align: middle;
-    }
-
-    .donate{
-      box-sizing: border-box;
-      background-color: #D9595C;
-      border-style: none;
-      border-color: #D9595C;
-      border-width: 0.0125em;
-      border-radius: 0.9375em;
-    }
-
-    .donate a{
-      color:white;
-    }
-
-    .sidebar-bottom{
-      position: absolute;
-      top: 35em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
-    }
-
-    .sidebar-bottom a{
-      text-decoration: none;
-      color: black;
-    }
-
-    #log-out{
-      padding-left: 5.3125em;
-      color: #D9595C;
-    }
-
-    /*Content*/
-    .content{
-      padding-left: 350px;
-      padding-top: 5em; 
-    }
-
-    .location{
-      padding-top: 10px;
-    }
-
-    #dropdown{
-      border-radius: 5px;
-      width: 60%;
-      border-color: #E0E0E0;
-      padding: 6px 6px 6px 6px;
-    }
-
-    .second-question{
-      padding-top: 20px;
-    }
-
-    .date{
-      padding-top: 10px;
-    }
-
-    #donate-date{    
-      padding: 6px 6px 6px 6px;
-      width: 30%;
-      font-family: sans-serif;
-    }
-
-    .second-question input{
-      border: 1px solid #E0E0E0;
-      border-radius: 5px;
-    }
-
-    .info{
-      padding-top: 30px;
-    }
-
-    .info h4{
-      padding-top: 15px;
-      color: #D9595C;
-    }
-
-    .info p{
-      padding-top: 10px;
-    }
-
-    .appointment{
-      padding-top: 20px;
-    }
-
-    .content button{
-      width: 18%;
-      padding: 10px 10px 10px 10px;
-      border: 1px solid #D9595C;
-      background-color: #D9595C;
-      border-radius: 5px;
-      color: white;
-    }
-
-    .content button:hover {
-      background-color: white;
-      color: black;
-    }
-
-  </style>
 </head>
 <body>
   <!--MENU-->
   <div class="sidenav">
     <div class="donate">
-      <a href="user-dashboard-donate.html" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
+      <a href="#" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
     </div>
     <div class="request">
-      <a href="user-dashboard-request.html" class="a"><img src="icons/menu/volunteer.png">Request</a>
+      <a href="#" class="a"><img src="icons/menu/volunteer.png">Request</a>
     </div>
     <div class="search">
-      <a href="user-dashboard.html" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
-    </div>;
+      <a href="#" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+    </div>
     <div class="sidebar-bottom">
       <table>
         <th><a href="#">Settings</a></th>
-        <th><a href="login.html" id="log-out">Log-out</a></th>
+        <th><a href="#" id="log-out">Log-out</a></th>
       </table>
     </div>
   </div>
 
+  <!--CONTENT-->
   <div class="content">
     <div class="first-question">
       <h2>Where to donate?</h2>
