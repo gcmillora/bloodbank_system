@@ -54,10 +54,7 @@
 
     .sidebar-bottom{
       position: absolute;
-      top: 38.5em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
+      top: 40em;
     }
 
     .sidebar-bottom a{
