@@ -73,9 +73,6 @@
     .sidebar-bottom{
       position: absolute;
       top: 40em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
     }
 
     .sidebar-bottom a{
@@ -303,8 +300,51 @@
     .outgoing{
       color: #525252;
       padding-left: 330px;
-      padding-top: 30px;
-      padding-bottom: 30px; 
+      padding-top: 10px;
+      padding-bottom: 10px; 
+    }
+
+    .util-buttons1{
+      padding-top: 10px;
+      padding-left: 330px;
+    }
+
+    .util-buttons2{
+      padding-top: 10px;
+      padding-left: 330px;
+      padding-bottom: 50px;
+    }
+
+    .button{
+      width: 7%;
+      height: 38px;
+      padding: 5px 3px 5px 3px;
+      border-radius: 6px;
+      color: black;
+      text-align: center;
+    }
+
+    .button img{
+      padding-top: 2px;
+      padding-right: 10px;
+      width: 15%;
+    }
+
+    #add{
+      border: 1px solid #73e2ab;
+      background-color: #73e2ab;
+    }
+
+    #delete{
+      border: 1px solid #e27373;
+      background-color: #e27373;
+      margin-left: 10px;
+    }
+
+    #update{
+      border: 1px solid #ffd92e;
+      background-color: #ffd92e;
+      margin-left: 10px;
     }
 
     @media only screen and (min-width: 1920px){
