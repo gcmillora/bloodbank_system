@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2021 at 09:34 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.16
+-- Generation Time: Jun 22, 2021 at 10:15 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,10 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `blood_groups` (
   `BloodGroups_ID` int(11) NOT NULL,
-  `Type_A_Quantity` int(9) NOT NULL,
-  `Type_B_Quantity` int(9) NOT NULL,
-  `Type_AB_Quantity` int(9) NOT NULL,
-  `Type_O_Quantity` int(9) NOT NULL
+  `A+` int(9) NOT NULL,
+  `A-` int(11) NOT NULL,
+  `B+` int(9) NOT NULL,
+  `B-` int(11) NOT NULL,
+  `AB+` int(9) NOT NULL,
+  `AB-` int(11) NOT NULL,
+  `O+` int(9) NOT NULL,
+  `O-` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -155,7 +159,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
-  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `donation`
@@ -167,25 +171,25 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
