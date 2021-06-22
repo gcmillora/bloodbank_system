@@ -29,7 +29,7 @@
         </div>
         <div class="float-child">
           <div class="prof-text">
-            <p><b><?php echo $_SESSION['Hospital_Name']?></b></p>
+            <p><b><?php echo $_SESSION['User_Name']?></b></p>
             <small>Davao City</small>
           </div>
         </div>
