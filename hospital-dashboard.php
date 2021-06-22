@@ -43,13 +43,13 @@
         <a href="#" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Dashboard</a>
       </div>
       <div class="request">
-        <a href="hospital-dashboard-request.html" class="a"><img src="icons/menu/volunteer.png">Requests</a>
+        <a href="hospital-dashboard-request.php" class="a"><img src="icons/menu/volunteer.png">Requests</a>
       </div>
       <div>
-        <a href="hospital-dashboard-outgoing.html" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Outgoing</a>
+        <a href="hospital-dashboard-outgoing.php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Outgoing</a>
       </div>
       <div class="stock">
-        <a href="hospital-dashboard-stock.html" class="a"><img src="icons/Hospital-Dashboard-Menu/blood-bag.png">Stock</a>
+        <a href="hospital-dashboard-stock.php" class="a"><img src="icons/Hospital-Dashboard-Menu/blood-bag.png">Stock</a>
       </div>
       <div class="sidebar-bottom">
         <table>
