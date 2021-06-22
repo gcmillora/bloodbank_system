@@ -34,12 +34,16 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
 
             if($blood == NULL){
                 send_alert("Could not find ".$name);
-                //echo "Taph";
                 mysqli_close($conn);
                 exit();
             }
             $blood_type = $blood["User_Blood_Type"];
             $uid = $blood["User_ID"];
+        }
+        else{
+            send_alert("Could not find ".$name);
+            mysqli_close($conn);
+            exit();
         }
 
         // Get hospital ID
@@ -89,5 +93,7 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
     }
     mysqli_close($conn);
 }
-else header("Location: ../user-dashboard-request.html");
+else{
+    echo "wah";
+}
 ?>
