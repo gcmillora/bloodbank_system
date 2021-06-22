@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jun 22, 2021 at 02:14 PM
+=======
+-- Generation Time: Jun 22, 2021 at 10:15 AM
+>>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -207,7 +211,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
+<<<<<<< HEAD
   MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
+  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `donation`
@@ -219,25 +227,41 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
+<<<<<<< HEAD
   MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
+<<<<<<< HEAD
   MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+=======
+  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+>>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
+<<<<<<< HEAD
   MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
+<<<<<<< HEAD
   MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+=======
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+>>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
