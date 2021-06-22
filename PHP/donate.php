@@ -38,11 +38,12 @@ if(isset($_POST['name-person']) && isset($_POST['contact-input']) && isset($_POS
             exit();
         }
 
-        // Check if user is in the database
+        // Get the User ID and User Blood Type
         $find_user = "SELECT User_ID, User_Blood_Type FROM user WHERE User_Name = '$name' AND User_Contact_Number = '$number'";
         if($sql_user = mysqli_query($conn,$find_user)){
             $User_Info = mysqli_fetch_assoc($sql_user);
 
+            // Check if the User exists
             if($User_Info == NULL){
                 send_alert("Could not find ".$name);
                 mysqli_close($conn);
@@ -52,15 +53,25 @@ if(isset($_POST['name-person']) && isset($_POST['contact-input']) && isset($_POS
             $UID = $User_Info["User_ID"];
             $Blood_Type = $User_Info["User_Blood_Type"];
         }
-        else echo "User Error";
+        else{
+            send_alert("User Error");
+            mysqli_close($conn);
+            exit();
+        }
         
+        // Get the Hospital ID
         $find_hosp = "SELECT Hospital_ID FROM hospital WHERE Hospital_Name = '$location'";
         if($sql_loc = mysqli_query($conn,$find_hosp)){
             $Hosp_ID = mysqli_fetch_assoc($sql_loc);
             $HID = $Hosp_ID["Hospital_ID"];
         }
-        else echo "Hospital Error";
+        else{
+            send_alert("Hospital Error");
+            mysqli_close($conn);
+            exit();
+        }
 
+        // Insert Donation Request and Update the stock
         $set_app = "INSERT INTO donation(User_ID,Hospital_ID,Appointment_Date) VALUES('$UID','$HID','$date_string')";
         if(mysqli_query($conn,$set_app)){
             $get_bid = "SELECT BloodGroups_ID FROM stocks WHERE Hospital_ID = '$HID'";
@@ -68,7 +79,6 @@ if(isset($_POST['name-person']) && isset($_POST['contact-input']) && isset($_POS
                 $Blood_ID = mysqli_fetch_assoc($sql_bid);
                 $BID = $Blood_ID["BloodGroups_ID"];
                 $update_stock = "UPDATE blood_groups SET `".$Blood_Type."` = `".$Blood_Type."` + 1 WHERE BloodGroups_ID = '$BID'";
-                echo $update_stock;
                 if(mysqli_query($conn,$update_stock)){
                     send_alert("Your donation request has been sent!");
                     mysqli_close($conn);
@@ -80,13 +90,21 @@ if(isset($_POST['name-person']) && isset($_POST['contact-input']) && isset($_POS
                     exit();
                 }
             }
-            else echo "BloodGroup Not Found.";
+            else {
+                send_alert("BloodGroup Error");
+                mysqli_close($conn);
+                exit();
+            }
         }
-        else echo "Insert Error";
+        else{
+            send_alert("Insertion Failed!");
+            mysqli_close($conn);
+            exit();
+        }
     }
 }
 else{
-    //send_alert("Unable to connect.");
+    send_alert("Unable to connect.");
     exit();
 }
 ?>
