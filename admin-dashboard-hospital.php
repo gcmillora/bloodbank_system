@@ -1,3 +1,16 @@
+<?php
+  session_start();
+
+  function send_alert_error($message){
+        echo '<script language="javascript">';
+        echo 'alert("',$message,'");';
+        echo "window.location.href='../login.html';";
+        echo '</script>';
+    }
+
+  if(isset($_SESSION['Admin_Name']) && isset($_SESSION['Admin_ID'])){
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -313,7 +326,7 @@
   
         <div class="float-child">
           <div class="prof-text">
-            <p><b>Juan Dela Cruz</b></p>
+            <p><b><?php echo $_SESSION['Admin_Name']?></b></p>
             <small>Admin</small>
           </div>
         </div>
@@ -325,15 +338,12 @@
         <a href="#" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Hospitals</a>
       </div>
       <div class="request">
-        <a href="#" class="a"><img src="icons/menu/volunteer.png">Users</a>
-      </div>
-      <div class="ongoing">
-        <a href="#" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Complaints</a>
+        <a href="admin-dashboard-users.php" class="a"><img src="icons/menu/volunteer.png">Users</a>
       </div>
       <div class="sidebar-bottom">
         <table>
           <th><a href="#">Settings</a></th>
-          <th><a href="#" id="log-out">Log-out</a></th>
+          <th><a href="logout.php" id="log-out">Log-out</a></th>
         </table>
       </div>
     </div>
@@ -389,7 +399,7 @@
         <th>Contact Number</th>
       </tr>
         <?php
-        $conn = mysqli_connect("localhost","root","","bloodbank_system");
+        $conn = mysqli_connect("localhost","root","","blood_donation_sys");
         if($conn->connect_error){ 
           die("Connection failed:".$conn->connect_error); 
         } 
@@ -414,3 +424,14 @@
   
 </body>
 </html>
+
+<?php
+
+}else{
+  send_alert_error("Session Invalid");
+}
+
+
+
+?>
+

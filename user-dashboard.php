@@ -44,7 +44,7 @@
         <a href="user-dashboard-request.html" class="a"><img src="icons/menu/volunteer.png">Request</a>
       </div>
       <div class="search">
-        <a href="#" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+        <a href="user-dashboard,php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
       </div>
       <div class="sidebar-bottom">
         <table>
