@@ -15,37 +15,6 @@
     }
 
     /* Menu */
-    .sidenav{
-      height: 100%;
-      width: 15.625em;
-      position: fixed;
-      background-color: #F2F2F2;
-      left: 0;
-      top: 0;
-      overflow-x: hidden;
-      padding-top: 1.25em;
-      font-family: sans-serif;
-    }
-
-
-    .a{
-      padding: 1.0625em 0.5em 0.75em 3.125em;
-      text-decoration: none;
-      font-size: 1.125em;
-      color: #4D4D4D;
-      display: block;
-    }
-
-    #first-sidebar{
-      padding: 9.375em 0.5em 0.375em 3.125em;
-    }
-
-    .sidenav img{
-      width: 15%;
-      padding-right: 1.25em;
-      vertical-align: middle;
-    }
-
     .request{
       box-sizing: border-box;
       background-color: #D9595C;
@@ -59,12 +28,57 @@
       color:white;
     }
 
+    .sidenav{
+      height: 100%;
+      width: 15.625em;
+      position: fixed;
+      background-color: #F2F2F2;
+      left: 0;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 1.25em;
+      font-family: sans-serif;
+    }
+
+    .menu{
+      padding-top: 2em;
+    }
+
+    .menu img{
+      width: 15%;
+      padding-right: 1.25em;
+      vertical-align: middle;
+    }
+
+    .profile img{
+      width: 30%;
+    }
+
+    .profile{
+      padding-top: 3em;
+    }
+
+    .profile table{
+      border-style: solid;
+      border-collapse: collapse;
+      padding-right: 100px;
+    }
+
+    .profile tr, td{
+      padding-right: 100px; 
+    }
+
+    .a{
+      padding: 1.0625em 0.5em 0.75em 3.125em;
+      text-decoration: none;
+      font-size: 1.125em;
+      color: #4D4D4D;
+      display: block;
+    }
+
     .sidebar-bottom{
       position: absolute;
-      top: 35em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
+      top: 40em;
     }
 
     .sidebar-bottom a{
@@ -75,6 +89,35 @@
     #log-out{
       padding-left: 5.3125em;
       color: #D9595C;
+    }
+
+    .float-container {
+      padding-top: 20px;
+      padding-left: 30px;
+      padding-bottom: 50px;
+    }
+
+    .icon {
+        width: 25%;
+        float: left;
+        padding: 10px ;
+    }  
+
+    .icon img{
+      width: 90%;
+    }
+
+    .prof-text{
+      padding-top: 17px;
+      padding-left: 0px;
+    }
+
+    .prof-text b{
+      color: #D9595C;
+    }
+
+    .prof-text small{
+      color: #8D8D8D;
     }
 
     /*Content*/
@@ -163,20 +206,34 @@
 <body>
   <!--MENU-->
   <div class="sidenav">
-    <div class="donate">
-      <a href="user-dashboard-donate.html" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
+    <div class="float-container">
+        <div class="float-child">
+           <div class="icon"><img src="icons/Hospital-Dashboard-Menu/rh-.png"></div>
+        </div>
+        <div class="float-child">
+          <div class="prof-text">
+            <p><b>Juan Dela Cruz</b></p>
+            <small>Davao City</small>
+          </div>
+        </div>
+
     </div>
-    <div class="request">
-      <a href="user-dashboard-request.html" id="second-sidebar" class="a"><img src="icons/menu/volunteer.png">Request</a>
-    </div>
-    <div class="search">
-      <a href="user-dashboard.html"  class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
-    </div>;
-    <div class="sidebar-bottom">
-      <table>
-        <th><a href="#">Settings</a></th>
-        <th><a href="login.html" id="log-out">Log-out</a></th>
-      </table>
+
+    <div class="menu">
+      <div class="donate">
+        <a href="user-dashboard-donate.html" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
+      </div>
+      <div class="request">
+        <a href="#" class="a"><img src="icons/menu/volunteer.png">Request</a>
+      </div>
+      <div class="search">
+        <a href="user-dashboard.html" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+      </div>
+      <div class="sidebar-bottom">
+        <table>
+          <th><a href="login.html" id="log-out">Log-out</a></th>
+        </table>
+      </div>
     </div>
   </div>
 

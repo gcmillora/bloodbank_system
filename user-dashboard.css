@@ -1,6 +1,6 @@
 /*General*/
 
-    *{padding: 0; margin: 0;}
+*{padding: 0; margin: 0;}
 
     body{
       font-family: sans-serif;
@@ -8,6 +8,19 @@
     }
 
     /* Menu */
+    .search{
+      box-sizing: border-box;
+      background-color: #D9595C;
+      border-style: none;
+      border-color: #D9595C;
+      border-width: 0.0125em;
+      border-radius: 0.9375em;
+    }
+
+    .search a{
+      color:white;
+    }
+
     .sidenav{
       height: 100%;
       width: 15.625em;
@@ -20,6 +33,33 @@
       font-family: sans-serif;
     }
 
+    .menu{
+      padding-top: 2em;
+    }
+
+    .menu img{
+      width: 15%;
+      padding-right: 1.25em;
+      vertical-align: middle;
+    }
+
+    .profile img{
+      width: 30%;
+    }
+
+    .profile{
+      padding-top: 3em;
+    }
+
+    .profile table{
+      border-style: solid;
+      border-collapse: collapse;
+      padding-right: 100px;
+    }
+
+    .profile tr, td{
+      padding-right: 100px; 
+    }
 
     .a{
       padding: 1.0625em 0.5em 0.75em 3.125em;
@@ -27,29 +67,6 @@
       font-size: 1.125em;
       color: #4D4D4D;
       display: block;
-    }
-
-    #first-sidebar{
-      padding: 9.375em 0.5em 0.375em 3.125em;
-    }
-
-    .sidenav img{
-      width: 15%;
-      padding-right: 1.25em;
-      vertical-align: middle;
-    }
-
-    .search{
-      box-sizing: border-box;
-      background-color: #D9595C;
-      border-style: none;
-      border-color: #D9595C;
-      border-width: 0.0125em;
-      border-radius: 0.9375em;
-    }
-
-    .search a{
-      color:white;
     }
 
     .sidebar-bottom{
@@ -67,12 +84,43 @@
       color: #D9595C;
     }
 
+    .float-container {
+      padding-top: 20px;
+      padding-left: 30px;
+      padding-bottom: 50px;
+    }
+
+    .icon {
+        width: 25%;
+        float: left;
+        padding: 10px ;
+    }  
+
+    .icon img{
+      width: 90%;
+    }
+
+    .prof-text{
+      padding-top: 17px;
+      padding-left: 0px;
+    }
+
+    .prof-text b{
+      color: #D9595C;
+    }
+
+    .prof-text small{
+      color: #8D8D8D;
+    }
+
     /* Banner */
     .header{
-      margin-left: 12.5em;
+      margin-left: 15.6em;
       padding: 5em;
       background: #D9595C;
       color: white;
+      position: relative;
+      top: -22px; 
     }
 
     /*Padding for title of table and Search*/
@@ -83,7 +131,6 @@
 
     /* Search box padding*/
     #search-box{
-      /*padding-left: 34.375em;*/
       position: absolute;
       right: 7em;
     }
