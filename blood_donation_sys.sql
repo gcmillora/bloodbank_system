@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2021 at 10:15 AM
+-- Generation Time: Jun 22, 2021 at 02:14 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -39,6 +39,13 @@ CREATE TABLE `blood_groups` (
   `O-` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `blood_groups`
+--
+
+INSERT INTO `blood_groups` (`BloodGroups_ID`, `A+`, `A-`, `B+`, `B-`, `AB+`, `AB-`, `O+`, `O-`) VALUES
+(6, 3, 5, 21, 3, 11, 1, 32, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -49,8 +56,18 @@ CREATE TABLE `donation` (
   `Donate_ID` int(11) NOT NULL,
   `User_ID` int(11) NOT NULL,
   `Hospital_ID` int(11) NOT NULL,
-  `Appointment_Date` date NOT NULL
+  `Appointment_Date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `donation`
+--
+
+INSERT INTO `donation` (`Donate_ID`, `User_ID`, `Hospital_ID`, `Appointment_Date`) VALUES
+(19, 5, 2, '1970-01-01 00:00:00'),
+(20, 6, 2, '2021-06-23 00:00:00'),
+(21, 6, 2, '1970-01-01 00:00:00'),
+(22, 5, 2, '2021-06-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -67,6 +84,13 @@ CREATE TABLE `hospital` (
   `Hospital_Email_Address` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `hospital`
+--
+
+INSERT INTO `hospital` (`Hospital_ID`, `Hospital_Name`, `Hospital_Address`, `Hospital_Contact_Number`, `Hospital_Password`, `Hospital_Email_Address`) VALUES
+(2, 'Westminster', 'London', 123, 'aaa', 'bbb');
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +102,13 @@ CREATE TABLE `request` (
   `User_ID` int(11) NOT NULL,
   `Hospital_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`Request_ID`, `User_ID`, `Hospital_ID`) VALUES
+(23, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -91,6 +122,13 @@ CREATE TABLE `stocks` (
   `BloodGroups_ID` int(11) NOT NULL,
   `Status` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stocks`
+--
+
+INSERT INTO `stocks` (`Stock_ID`, `Hospital_ID`, `BloodGroups_ID`, `Status`) VALUES
+(2, 2, 6, 'Available');
 
 -- --------------------------------------------------------
 
@@ -108,6 +146,16 @@ CREATE TABLE `user` (
   `User_Password` varchar(15) NOT NULL,
   `User_Email_Address` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`User_ID`, `User_Name`, `User_Age`, `User_Address`, `User_Contact_Number`, `User_Blood_Type`, `User_Password`, `User_Email_Address`) VALUES
+(5, 'Drew', 20, 'Davao', 111, 'A+', '123', 'drew'),
+(6, 'Greg', 21, 'Koronadal', 222, 'B+', 'bbb', 'greg'),
+(7, 'Ferd', 20, 'Davao', 333, 'B+', 'aaa', 'mmm'),
+(8, 'Bea', 20, 'Davao', 444, 'O+', 'ddd', 'bea');
 
 --
 -- Indexes for dumped tables
@@ -159,37 +207,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
-  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `Donate_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Donate_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

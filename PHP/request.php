@@ -1,11 +1,4 @@
 <?php
-function send_alert($message){
-    echo '<script language="javascript">';
-    echo 'alert("',$message,'");';
-    echo "window.location.href='../user-dashboard-request.html';";
-    echo '</script>';
-}
-
 if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['location'])){
     include 'db_conn.php';
     
@@ -14,6 +7,13 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
+    }
+
+    function send_alert($message){
+        echo '<script language="javascript">';
+        echo 'alert("',$message,'");';
+        echo "window.location.href='../user-dashboard-request.html';";
+        echo '</script>';
     }
 
     $name = validate($_POST['full-name']);
@@ -39,6 +39,11 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
             }
             $blood_type = $blood["User_Blood_Type"];
             $uid = $blood["User_ID"];
+        }
+        else{
+            send_alert("Could not find ".$name);
+            mysqli_close($conn);
+            exit();
         }
 
         // Get hospital ID
@@ -88,8 +93,7 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
     }
     mysqli_close($conn);
 }
-else {
-    send_alert("Unable to connect.");
-    exit();
+else{
+    echo "wah";
 }
 ?>

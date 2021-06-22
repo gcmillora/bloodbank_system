@@ -29,44 +29,46 @@
 
   <!--CONTENT-->
   <div class="content">
-    <div class="name-of-person">
-      <h2>Name</h2>
-      <div class="name">
-        <input type="text" name="name-person">
+    <form method="post" action="php/donate.php">
+      <div class="name-of-person">
+        <h2>Name</h2>
+        <div class="name">
+          <input type="text" name="name-person">
+        </div>
       </div>
-    </div>
-    <div class="contact-num">
-      <h2>Contact Number</h2>
-      <div class="contact">
-        <input type="number" name="contact-input">
+      <div class="contact-num">
+        <h2>Contact Number</h2>
+        <div class="contact">
+          <input type="tel" name="contact-input">
+        </div>
       </div>
-    </div>
-    <div class="first-question">
-      <h2>Where to donate?</h2>
-      <div class="location">
-        <select name="location" id="dropdown">
-        <option value="Westminster">Westminster</option>
-        </select>
+      <div class="first-question">
+        <h2>Where to donate?</h2>
+        <div class="location">
+          <select name="location" id="dropdown">
+          <option value="Westminster">Westminster</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="second-question">
-      <h2>When will you donate?</h2>
-      <div class="date">
-        <input type="date" id="donate-date" name="donate-date">
+      <div class="second-question">
+        <h2>When will you donate?</h2>
+        <div class="date">
+          <input type="date" id="donate-date" name="donate-date">
+        </div>
       </div>
-    </div>
-    <div class="info">
-      <h2>How to donate?</h2>
-      <h4>How often can a person donate?</h4>
-      <p>A healthy individual may donate every three months.</p>
-      <h4>Can a person who has tattoo or body piercing still donate blood?</h4>
-      <p>If the tattooing procedure or the piercing was done a year ago, he/she may donate. This is also applicable to acupuncture, and other procedures involving needles.</p>
-      <h4>How long will it take to donate blood?</h4>
-      <p>The whole process of blood donation, from the registration up to the recovery, will only take an average of 30 minutes.</p>
-    </div>
-    <div class="appointment">
-      <button type="button">Set an appointment</button>
-    </div>
+      <div class="info">
+        <h2>How to donate?</h2>
+        <h4>How often can a person donate?</h4>
+        <p>A healthy individual may donate every three months.</p>
+        <h4>Can a person who has tattoo or body piercing still donate blood?</h4>
+        <p>If the tattooing procedure or the piercing was done a year ago, he/she may donate. This is also applicable to acupuncture, and other procedures involving needles.</p>
+        <h4>How long will it take to donate blood?</h4>
+        <p>The whole process of blood donation, from the registration up to the recovery, will only take an average of 30 minutes.</p>
+      </div>
+      <div class="appointment">
+        <button type="submit">Set an appointment</button>
+      </div>
+    </form>
   </div>
 </body>
 </html>
