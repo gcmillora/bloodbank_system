@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bloodbank Log-in</title>
+    <title>Bloodbank Sign-up</title> <!-- changed the title from "Bloodbank Login" to "Bloodbank Sign-up" -->
     <link
       rel="stylesheet"
       href="Assets/bootstrap-5.0.0-dist/css/bootstrap.min.css"
@@ -72,13 +72,17 @@
       </div>
       <div class="col-md-6 px-5" id="right-div">
         <p class="h1 text-left mb-3 font-weight-bold">Register</p>
-        <form>
+        <form method="post" action="php/signup.php"> <!-- connected signup.html to signup.php -->
           <div class="form-outline mb-4">
-            <input type="text" id="fullName" class="form-control" />
+            <input type="text" id="fullName" name="fullName" class="form-control" required/> <!-- added name="fullname" and required-->
             <label class="form-label" for="fullName">Full Name</label>
           </div>
           <div class="form-outline mb-4">
-            <select id="bloodType" class="form-control">
+            <input type="number" id="age" name="age" class="form-control" required/> <!-- added age in the sign-up form , name="age", and required -->
+            <label class="form-label" for="age">Age</label>
+          </div>
+          <div class="form-outline mb-4">
+            <select id="bloodType" name="bloodType" class="form-control" required> <!-- added name="bloodType" and required -->
               <option>A+</option>
               <option>A-</option>
               <option>B+</option>
@@ -91,22 +95,22 @@
             <label class="form-label" for="bloodType">Blood Type</label>
           </div>
           <div class="form-outline mb-4">
-            <input type="etext" id="address" class="form-control" />
+            <input type="etext" id="address" name="address" class="form-control" required/> <!-- added name="address" and required -->
             <label class="form-label" for="address">Address</label>
           </div>
           <div class="form-outline mb-4">
-            <input type="text" id="contactNumber" class="form-control" />
+            <input type="number" id="contactNumber" name="contactNumber" class="form-control" required/> <!-- added name="contactNumber", changed type="number", and added required -->
             <label class="form-label" for="contactNumber">Contact Number</label>
           </div>
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="email" class="form-control" />
+            <input type="email" id="email" name="email" class="form-control" required/> <!-- added name="email" and required -->
             <label class="form-label" for="email">Email address</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="password" class="form-control" />
+            <input type="password" id="password" name="password" class="form-control" required/> <!-- added name="password" and required -->
             <label class="form-label" for="password">Password</label>
           </div>
 
