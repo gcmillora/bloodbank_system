@@ -346,7 +346,18 @@
         <td>
           <div class="totalhospitals row">
             <div class="column">
-              <b><h2 id="total-hospital-number">15</h2></b>
+               <?php
+                $conn = mysqli_connect("localhost","root","","bloodbank_system");
+                if($conn->connect_error){ 
+                  die("Connection failed:".$conn->connect_error); 
+                } 
+                $sql = "SELECT * FROM hospital"; 
+                $result = $conn->query($sql);
+                if ($result=mysqli_query($conn,$sql)) {
+                     $rowcount=mysqli_num_rows($result);
+                    echo "<b><h2 id='total-hospital-number'>".$rowcount."</h2></b>";
+                }
+            ?>
             </div>
             <div class="column" style="margin-top: 35px"> 
               <b><p id="text-right" style ="font-size: 30px">Hospitals are in the database</p></b>
@@ -373,42 +384,30 @@
   <div class="content">
     <table class="table-content" style="width: 90%">
       <tr>
-        <th>Hospital</th>
+        <th>Hospital Name</th>
         <th>Location</th>
-        <th>Total Blood Bags</th>
-        <th>Status</th>
+        <th>Contact Number</th>
       </tr>
-      <tr>
-        <td>Lorem Ipsum Hospital</td>
-        <td>Westminster, United States</td>
-        <td>9</td>
-        <td>Available</td>
-      </tr>
-      <tr>
-        <td>Lorem Ipsum Hospital</td>
-        <td>Westminster, United States</td>
-        <td>9</td>
-        <td>Available</td>
-      </tr>
-      <tr>
-        <td>Lorem Ipsum Hospital</td>
-        <td>Westminster, United States</td>
-        <td>9</td>
-        <td>Available</td>
-      </tr>
-      <tr>
-        <td>Lorem Ipsum Hospital</td>
-        <td>Westminster, United States</td>
-        <td>9</td>
-        <td>Available</td>
-      </tr>
-      <tr>
-        <td>Lorem Ipsum Hospital</td>
-        <td>Westminster, United States</td>
-        <td>9</td>
-        <td>Available</td>
-      </tr>
-    </table>
+        <?php
+        $conn = mysqli_connect("localhost","root","","bloodbank_system");
+        if($conn->connect_error){ 
+          die("Connection failed:".$conn->connect_error); 
+        } 
+        $sql = "SELECT Hospital_Name,
+        Hospital_Address, Hospital_Contact_Number FROM hospital"; 
+        $result = $conn->query($sql);
+
+        if($result->num_rows>0){
+          while($row=$result->fetch_assoc()){
+            echo "<tr><td>".$row["Hospital_Name"]."</td><td>".$row["Hospital_Address"]."</td><td>".$row["Hospital_Contact_Number"]."</td></tr>";
+          }
+          echo"</table>";
+        }
+        else{
+          echo "0 result";
+        }
+        $conn->close();
+        ?>
   </div>
 
   
