@@ -76,7 +76,7 @@
         </tr>
         <tr>
              <?php
-        $conn = mysqli_connect("localhost","root","","bloodbank_system");
+        $conn = mysqli_connect("localhost","root","","blood_donation_sys");
         if($conn->connect_error){ 
           die("Connection failed:".$conn->connect_error); 
         } 
