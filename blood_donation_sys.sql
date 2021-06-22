@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Jun 22, 2021 at 02:14 PM
-=======
--- Generation Time: Jun 22, 2021 at 10:15 AM
->>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
+-- Generation Time: Jun 22, 2021 at 03:01 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -48,7 +44,7 @@ CREATE TABLE `blood_groups` (
 --
 
 INSERT INTO `blood_groups` (`BloodGroups_ID`, `A+`, `A-`, `B+`, `B-`, `AB+`, `AB-`, `O+`, `O-`) VALUES
-(6, 3, 5, 21, 3, 11, 1, 32, 2);
+(6, 7, 5, 22, 3, 11, 1, 33, 2);
 
 -- --------------------------------------------------------
 
@@ -71,7 +67,13 @@ INSERT INTO `donation` (`Donate_ID`, `User_ID`, `Hospital_ID`, `Appointment_Date
 (19, 5, 2, '1970-01-01 00:00:00'),
 (20, 6, 2, '2021-06-23 00:00:00'),
 (21, 6, 2, '1970-01-01 00:00:00'),
-(22, 5, 2, '2021-06-25 00:00:00');
+(22, 5, 2, '2021-06-25 00:00:00'),
+(23, 5, 2, '2021-06-24 00:00:00'),
+(24, 5, 2, '2021-06-24 00:00:00'),
+(25, 6, 2, '2021-07-02 00:00:00'),
+(26, 5, 2, '2021-06-25 00:00:00'),
+(27, 5, 2, '2021-06-25 00:00:00'),
+(28, 8, 2, '2021-06-30 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -112,7 +114,8 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`Request_ID`, `User_ID`, `Hospital_ID`) VALUES
-(23, 5, 2);
+(23, 5, 2),
+(24, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -145,10 +148,10 @@ CREATE TABLE `user` (
   `User_Name` varchar(30) NOT NULL,
   `User_Age` int(2) NOT NULL,
   `User_Address` text NOT NULL,
-  `User_Contact_Number` int(11) NOT NULL,
+  `User_Contact_Number` int(9) NOT NULL,
   `User_Blood_Type` set('A+','A-','B+','B-','AB+','AB-','O+','O-') NOT NULL,
-  `User_Password` varchar(15) NOT NULL,
-  `User_Email_Address` varchar(20) NOT NULL
+  `User_Password` varchar(16) NOT NULL,
+  `User_Email_Address` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -156,7 +159,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_ID`, `User_Name`, `User_Age`, `User_Address`, `User_Contact_Number`, `User_Blood_Type`, `User_Password`, `User_Email_Address`) VALUES
-(5, 'Drew', 20, 'Davao', 111, 'A+', '123', 'drew'),
+(5, 'Drew', 20, 'Davao', 165238050, 'A+', '123', 'drew'),
 (6, 'Greg', 21, 'Koronadal', 222, 'B+', 'bbb', 'greg'),
 (7, 'Ferd', 20, 'Davao', 333, 'B+', 'aaa', 'mmm'),
 (8, 'Bea', 20, 'Davao', 444, 'O+', 'ddd', 'bea');
@@ -211,57 +214,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
-<<<<<<< HEAD
   MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-=======
-  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
->>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `Donate_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Donate_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-<<<<<<< HEAD
   MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-<<<<<<< HEAD
-  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-=======
-  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
->>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
+  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-<<<<<<< HEAD
   MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-<<<<<<< HEAD
   MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-=======
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
->>>>>>> 8a8349728e618076e664438a78ee0298d5164f8f
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
