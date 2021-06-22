@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php
+
+  session_start();
+
+  function send_alert_error($message){
+        echo '<script language="javascript">';
+        echo 'alert("',$message,'");';
+        echo "window.location.href='../login.html';";
+        echo '</script>';
+    }
+
+  if(isset($_SESSION['Hospital_Name']) && isset($_SESSION['Hospital_ID'])){
+
+?>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -16,7 +31,7 @@
         </div>
         <div class="float-child">
           <div class="prof-text">
-            <p><b>Drewzy Hospital</b></p>
+            <p><b><?php echo $_SESSION['Hospital_Name']?></b></p>
             <small>Davao City</small>
           </div>
         </div>
@@ -145,3 +160,10 @@
   </div>
 </body>
 </html>
+
+<?php
+}else{
+   send_alert_error("Session Invalid");
+}
+
+?>
