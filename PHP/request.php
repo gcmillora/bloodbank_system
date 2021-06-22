@@ -34,7 +34,6 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
 
             if($blood == NULL){
                 send_alert("Could not find ".$name);
-                //echo "Taph";
                 mysqli_close($conn);
                 exit();
             }
@@ -89,5 +88,5 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
     }
     mysqli_close($conn);
 }
-else header("Location: ../user-dashboard-request.html");
+else echo "wah";
 ?>
