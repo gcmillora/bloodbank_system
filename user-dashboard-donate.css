@@ -113,12 +113,17 @@
       border-radius: 5px;
     }
 
+    .contact{
+      padding-top: 10px;
+    }
+
     .contact-num{
       padding-top: 20px;
     }
+
     .contact-num input{
       padding: 6px 6px 6px 6px;
-      width: 40%;
+      width: 20%;
       border: 1px solid #E0E0E0;
       border-radius: 5px;
     }
