@@ -56,20 +56,6 @@
       display: block;
     }
 
-
-    .dashboard{
-      box-sizing: border-box;
-      background-color: #D9595C;
-      border-style: none;
-      border-color: #D9595C;
-      border-width: 0.0125em;
-      border-radius: 0.9375em;
-    }
-
-    .dashboard a{
-      color:white;
-    }
-
     .sidebar-bottom{
       position: absolute;
       top: 40em;
