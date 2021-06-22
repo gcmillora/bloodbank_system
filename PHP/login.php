@@ -21,6 +21,13 @@
         echo '</script>';
     }
 
+    function send_alert_success_admin($message){
+        echo '<script language="javascript">';
+        echo 'alert("',$message,'");';
+        echo "window.location.href='../admin-dashboard-hospital.php';";
+        echo '</script>';
+    }
+
 
     function send_alert_error($message){
         echo '<script language="javascript">';
@@ -42,9 +49,12 @@
 		}else{
 			$sql_user = "SELECT * FROM user WHERE User_Email_Address='$email' AND User_Password='$password'";
 			$sql_hospital = "SELECT * FROM hospital WHERE Hospital_Email_Address='$email' AND Hospital_Password='$password'";
+			$sql_admin = "SELECT * FROM admin WHERE Admin_Email_Address='$email' AND Admin_Password='$password'";
+
 
 			$result_user = mysqli_query($conn, $sql_user);
 			$result_hospital = mysqli_query($conn, $sql_hospital);
+			$result_admin = mysqli_query($conn, $sql_admin);
 
 			if(mysqli_num_rows($result_user)===1){
 				$row = mysqli_fetch_assoc($result_user);
@@ -62,6 +72,15 @@
 					$_SESSION['Hospital_Name'] = $row['Hospital_Name'];
 					$_SESSION['Hospital_ID'] = $row['Hospital_ID'];
 					send_alert_success_hospital("Log-in Successful!");
+				}
+
+			}else if(mysqli_num_rows($result_admin)===1){
+				$row = mysqli_fetch_assoc($result_admin);
+
+				if($row['Admin_Email_Address']===$email && $row['Admin_Password']===$password){
+					$_SESSION['Admin_Name'] = $row['Admin_Name'];
+					$_SESSION['Admin_ID'] = $row['Admin_ID'];
+					send_alert_success_admin("Log-in Successful!");
 				}
 
 			}else{
