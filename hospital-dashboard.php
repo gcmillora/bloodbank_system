@@ -63,7 +63,7 @@
       </div>
       <div class="sidebar-bottom">
         <table>
-          <th><a href="login.html" id="log-out">Log-out</a></th>
+          <th><a href="logout.php" id="log-out">Log-out</a></th>
         </table>
       </div>
     </div>
