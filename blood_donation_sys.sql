@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 23, 2021 at 10:59 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Host: 127.0.0.1
+-- Generation Time: Jun 23, 2021 at 12:18 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -131,6 +131,13 @@ CREATE TABLE `request` (
   `Hospital_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`Request_ID`, `User_ID`, `Hospital_ID`) VALUES
+(23, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -179,7 +186,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_ID`, `User_Name`, `User_Age`, `User_Address`, `User_Contact_Number`, `User_Blood_Type`, `User_Password`, `User_Email_Address`, `User_Sex`) VALUES
-(1, 'Greg Norman Millora', 21, 'Vergara Subdivision, Koronadal City, South Cotabato', '09989585070', 'AB+', '12345', 'greg@gmail.com', 'Male');
+(1, 'Greg Norman Millora', 21, 'Vergara Subdivision, Koronadal City, South Cotabato', '09989585070', 'AB+', '12345', 'greg@gmail.com', 'Male'),
+(26, 'Andrew Louis Hermo', 20, 'Phase 8, Angeles St., Doña Asuncion Village, Brgy. Pampanga, Davao City', '09165238050', 'A+', '12345', 'drew@gmail.com', 'Male');
 
 --
 -- Indexes for dumped tables
@@ -255,7 +263,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `stocks`
@@ -267,7 +275,7 @@ ALTER TABLE `stocks`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

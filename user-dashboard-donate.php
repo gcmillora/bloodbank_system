@@ -9,7 +9,7 @@
     }
 
   if(isset($_SESSION['User_Name']) && isset($_SESSION['User_ID'])){
-
+    include 'php/db_conn.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,8 +72,15 @@
         <h2>Where to donate?</h2>
         <div class="location">
           <select name="location" id="dropdown">
-          <option value="Westminster">Westminster</option>
-          </select>
+          <?php
+              $result = $conn->query("SELECT Hospital_ID, Hospital_Name from hospital");
+              while ($row = $result->fetch_assoc()) {
+                  unset($id, $name);
+                  $name = $row['Hospital_Name']; 
+                  echo '<option value="'.$name.'">'.$name.'</option>';
+              }
+    echo "</select>";
+          ?>
         </div>
       </div>
       <div class="second-question">

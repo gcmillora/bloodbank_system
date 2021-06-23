@@ -9,7 +9,7 @@
     }
 
   if(isset($_SESSION['User_Name']) && isset($_SESSION['User_ID'])){
-
+    include 'php/db_conn.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -269,8 +269,6 @@
         <h3>Hospital</p>
           <select name="location" id="dropdown">
             <?php
-              $conn = new mysqli('localhost', 'root', '', 'blood_donation_sys') 
-              or die ('Cannot connect to db');
               $result = $conn->query("SELECT Hospital_ID, Hospital_Name from hospital");
               while ($row = $result->fetch_assoc()) {
                   unset($id, $name);
