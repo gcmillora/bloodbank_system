@@ -62,6 +62,7 @@
 				if($row['User_Email_Address']===$email && $row['User_Password']===$password){
 					$_SESSION['User_Name'] = $row['User_Name'];
 					$_SESSION['User_ID'] = $row['User_ID'];
+					$_SESSION['User_Contact_Number'] = $row['User_Contact_Number'];
 					send_alert_success_user("Log-in Successful!");
 				}
 
