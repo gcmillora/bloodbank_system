@@ -40,7 +40,7 @@
         </div>
         <div class="float-child">
           <div class="prof-text">
-            <p><b>Drewzy Hospital</b></p>
+            <p><b><?php echo $_SESSION['Hospital_Name']?></b></p>
             <small>Davao City</small>
           </div>
         </div>
@@ -59,7 +59,7 @@
       </div>
       <div class="sidebar-bottom">
         <table>
-          <th><a href="login.html" id="log-out">Log-out</a></th>
+          <th><a href="logout.php" id="log-out">Log-out</a></th>
         </table>
       </div>
     </div>
