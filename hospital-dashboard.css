@@ -198,23 +198,18 @@
       padding-bottom: 20px;
     }
 
-     /* Search box padding*/
-    #search-box{
+
+    #pick-filter{
       /*padding-left: 34.375em;*/
       position: absolute;
-      right: 11em;
+      right: 7em;
     }
 
-    /* Search box design*/
-    .table-header input[type=text]{
-      font-size: 1.0625em;
-      color: #2C2C2C;
-      padding: 0.375em 0.375em 0.375em 0.375em;
-      border-width: 2px;
-      border-style: solid;
-      border-radius: 0.3125em;
+    #dropdown{
+      border-radius: 5px;
+      width: 100%;
       border-color: #E0E0E0;
-      width: 125%;
+      padding: 6px 6px 14px 6px;
     }
 
     /*Table CSS*/
@@ -258,7 +253,7 @@
 
 
     #filter{
-      padding-left: 210px;
+      padding-left: 450px;
     }
 
     #filter button{
