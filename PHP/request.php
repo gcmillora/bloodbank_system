@@ -8,11 +8,10 @@ if(isset($_POST['full-name']) && isset($_POST['number']) && isset($_POST['locati
         $data = htmlspecialchars($data);
         return $data;
     }
-
     function send_alert($message){
         echo '<script language="javascript">';
         echo 'alert("',$message,'");';
-        echo "window.location.href='../user-dashboard-request.html';";
+        echo "window.location.href='../user-dashboard-request.php';";
         echo '</script>';
     }
 

@@ -2,7 +2,7 @@
 function send_alert($message){
     echo '<script language="javascript">';
     echo 'alert("',$message,'");';
-    echo "window.location.href='../user-dashboard-donate.html';";
+    echo "window.location.href='../user-dashboard-donate.php';";
     echo '</script>';
 }
 
@@ -19,7 +19,6 @@ if(isset($_POST['name-person']) && isset($_POST['contact-input']) && isset($_POS
     $name = validate($_POST['name-person']);
     $number = validate($_POST['contact-input']);
     $location = validate($_POST['location']);
-    //$date = date('Y-m-d', strtotime($_POST['donate-date']));
     $date = new DateTime($_POST['donate-date']);
     $date_string = $date->format('Y-m-d H:i:s');
     $now = new DateTime();
