@@ -58,9 +58,6 @@
       <div class="request">
         <a href="hospital-dashboard-request.php" class="a"><img src="icons/menu/volunteer.png">Requests</a>
       </div>
-      <div>
-        <a href="hospital-dashboard-outgoing.php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Outgoing</a>
-      </div>
       <div class="stock">
         <a href="hospital-dashboard-stock.php" class="a"><img src="icons/Hospital-Dashboard-Menu/blood-bag.png">Stock</a>
       </div>
@@ -88,13 +85,6 @@
               $arr = mysqli_fetch_array($get_data);
               echo $arr[0];
             ?></p></b>
-          </div>
-        </td>
-        <td>
-          <div class="total-outgoing">
-            <h3 class="total-text">Outgoing</h3>
-            <p class="total">Total</p>
-            <b><p id="total-requested-number">10</p></b>
           </div>
         </td>
         <td>
