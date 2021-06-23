@@ -30,7 +30,7 @@
         <div class="float-child">
           <div class="prof-text">
             <p><b><?php echo $_SESSION['User_Name']?></b></p>
-            <small>Davao City</small>
+            <small><?php echo $_SESSION['User_Contact_Number']?></small>
           </div>
         </div>
 
@@ -38,17 +38,17 @@
 
     <div class="menu">
       <div class="donate">
-        <a href="user-dashboard-donate.html" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
+        <a href="user-dashboard-donate.php" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
       </div>
       <div class="request">
-        <a href="user-dashboard-request.html" class="a"><img src="icons/menu/volunteer.png">Request</a>
+        <a href="user-dashboard-request.php" class="a"><img src="icons/menu/volunteer.png">Request</a>
       </div>
       <div class="search">
-        <a href="user-dashboard,php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+        <a href="user-dashboard.php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
       </div>
       <div class="sidebar-bottom">
         <table>
-          <th><a href="login.html" id="log-out">Log-out</a></th>
+          <th><a href="logout.php" id="log-out">Log-out</a></th>
         </table>
       </div>
     </div>
