@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 23, 2021 at 09:10 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Host: localhost
+-- Generation Time: Jun 23, 2021 at 10:59 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Admin_ID`, `Admin_Email_Address`, `Admin_Password`, `Admin_Name`) VALUES
-(1, 'admin@gmail.com', '123admin', 'Miguel asdasd');
+(1, 'admin@gmail.com', 'admin', 'Sir Migz');
 
 -- --------------------------------------------------------
 
@@ -64,8 +64,12 @@ CREATE TABLE `blood_groups` (
 --
 
 INSERT INTO `blood_groups` (`BloodGroups_ID`, `A+`, `A-`, `B+`, `B-`, `AB+`, `AB-`, `O+`, `O-`) VALUES
-(1, 10, 5, 19, 3, 11, 1, 32, 2),
-(6, 26, 6, 7, 20, 11, 14, 2, 5);
+(1, 12, 5, 12, 9, 12, 18, 23, 22),
+(2, 26, 6, 7, 20, 11, 14, 2, 5),
+(3, 10, 5, 19, 3, 11, 1, 32, 2),
+(4, 12, 35, 34, 11, 2, 3, 53, 33),
+(5, 12, 35, 14, 2, 9, 34, 35, 8),
+(6, 7, 53, 39, 8, 9, 14, 18, 29);
 
 -- --------------------------------------------------------
 
@@ -96,11 +100,11 @@ INSERT INTO `donation` (`Donate_ID`, `User_ID`, `Hospital_ID`, `Appointment_Date
 
 CREATE TABLE `hospital` (
   `Hospital_ID` int(11) NOT NULL,
-  `Hospital_Name` varchar(20) NOT NULL,
+  `Hospital_Name` varchar(50) NOT NULL,
   `Hospital_Address` text NOT NULL,
   `Hospital_Contact_Number` int(7) NOT NULL,
   `Hospital_Password` varchar(15) NOT NULL,
-  `Hospital_Email_Address` varchar(20) NOT NULL
+  `Hospital_Email_Address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -108,8 +112,12 @@ CREATE TABLE `hospital` (
 --
 
 INSERT INTO `hospital` (`Hospital_ID`, `Hospital_Name`, `Hospital_Address`, `Hospital_Contact_Number`, `Hospital_Password`, `Hospital_Email_Address`) VALUES
-(1, 'Hentai Hospital', 'hentai', 911, 'savelives', 'drewzy@gmail.com'),
-(2, 'Westminster', 'Unahan sa Agdao', 69, 'hotdog', 'hot@dog');
+(1, 'Southern Philippines Medical Center', 'J.P. Laurel Ave, Bajada, Davao City', 2272731, '12345', 'spmc@gmail.com'),
+(2, 'Davao Doctors Hospital', '118 Elpidio Quirino Ave, Poblacion District, Davao City', 2228000, '12345', 'davaodoc@gmail.com'),
+(3, 'Brokenshire Integrated Health Ministries, Inc.', 'Brokenshire Heights, A. Pichon St, Armau, Davao City', 3053170, '12345', 'brokenshire@gmail.com'),
+(4, 'Allah Valley Medical Specialists\' Center, Inc.', 'Gensan Drive, Koronadal City', 2283350, '12345', 'allahvalley@gmail.com'),
+(5, 'South Cotabato Provincial Hospital', '640 Osmena, Poblacion, Koronadal City', 2282919, '12345', 'scph@gmail.com'),
+(6, 'General Santos Doctors Hospital, Inc.', 'South Cotabato PH, Pan-Philippine Hwy, General Santos City', 2502777, '12345', 'gensandoc@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -142,7 +150,11 @@ CREATE TABLE `stocks` (
 
 INSERT INTO `stocks` (`Stock_ID`, `Hospital_ID`, `BloodGroups_ID`, `Status`) VALUES
 (2, 1, 1, 'Available'),
-(3, 2, 6, 'Available');
+(3, 2, 2, 'Available'),
+(4, 3, 3, 'Available'),
+(5, 4, 4, 'Available'),
+(6, 5, 5, 'Available'),
+(7, 6, 6, 'Available');
 
 -- --------------------------------------------------------
 
@@ -167,24 +179,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_ID`, `User_Name`, `User_Age`, `User_Address`, `User_Contact_Number`, `User_Blood_Type`, `User_Password`, `User_Email_Address`, `User_Sex`) VALUES
-(5, '', 0, 'sdf', '0', 'A+', 'sdf', 'sdf@sfgd', ''),
-(6, 'Ferdi Gadorskie', 0, 'Davao City', '2147483647', 'A+', '12345hentai', 'ferdi@yahoo.com', ''),
-(7, 'Nani Oppa', 0, 'Korea City', '2147483647', 'O+', '12345jettmain', 'nani@oppa.com', ''),
-(8, 'sdf', 0, 'sdf', '123123', 'A+', '3242341', '123@sdf', ''),
-(9, 'dasd', 0, 'asdas', '2147483647', 'A+', '126666sdffg', 'asdasd@gmail.com', ''),
-(10, 'ferd', 0, 'Davao Del Sur', '666', 'A+', '12345hentai', 'ferd@gmail.com', ''),
-(12, 'Ferd', 21, 'Davao City', '2147483647', 'A+', '12345hef', 'feerdi@gmail.cpm', ''),
-(13, 'asd asdas', 35, 'asdas wqe', '2147483647', 'A+', '12345hentai', 'iidrefpulga@gmail.co', ''),
-(14, 'sad', 13, 'dase', '12341', 'A+', '12345genitalia', 'asdasd@gmail.com', ''),
-(15, 'saad asfaq', 69, 'Afghanistan', '2147483647', 'A+', 'inshallah911', 'halal@aljazeera.com', ''),
-(16, 'oli yikes', 23, 'London', '9123423123', 'A+', '12345jungkook', 'oli@london.com', ''),
-(17, 'mmbabbee', 34, 'Paris', '09302728676', 'A+', '12345neymarass', 'psg@suck.com', ''),
-(18, 'ferdinand gador', 21, 'sa puso mo', '09302728676', 'A+', '12345hentai', 'ferdi@yahoo.com', ''),
-(19, 'Ferdinand Gador II', 21, 'Davao City', '09302728676', 'A+', '12345nani0ppa', 'lordvaderstrange@gma', ''),
-(20, 'sdfg', 12, 'qweasd sad', '123', 'A+', 'asdasdasda', 'ergerger@lolo.cls', ''),
-(22, 'mitch harper', 21, 'Davao City', '09122312341', 'A+', 'steelseries', 'mitchharper@gmail.com', ''),
-(23, 'hentai', 31, 'davaop', '0123123', 'A+', '12345', 'hent@ai', ''),
-(24, 'oni cahn', 21, 'davao cirt', '012938123', 'A+', '12345', 'oni@chan', 'Male');
+(1, 'Greg Norman Millora', 21, 'Vergara Subdivision, Koronadal City, South Cotabato', '09989585070', 'AB+', '12345', 'greg@gmail.com', 'Male');
 
 --
 -- Indexes for dumped tables
@@ -242,7 +237,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
-  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `donation`
@@ -254,7 +249,7 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `request`
@@ -266,13 +261,13 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
