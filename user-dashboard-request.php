@@ -91,7 +91,7 @@
 
     .sidebar-bottom{
       position: absolute;
-      top: 40em;
+      top: 5em;
     }
 
     .sidebar-bottom a{
@@ -215,40 +215,41 @@
     }
 
   </style>
+  <link rel="stylesheet" href="user-dashboard-request.css">
 </head>
 <body>
   <!--MENU-->
   <div class="sidenav">
-    <div class="float-container">
-        <div class="float-child">
-           <div class="icon"><img src="icons/Hospital-Dashboard-Menu/rh-.png"></div>
-        </div>
-        <div class="float-child">
-          <div class="prof-text">
-            <p><b><?php echo $_SESSION['User_Name']?></b></p>
-            <small><?php echo $_SESSION['User_Contact_Number']?></small>
+      <div class="float-container">
+          <div class="float-child">
+             <div class="icon"><img src="icons/Hospital-Dashboard-Menu/rh-.png"></div>
           </div>
+          <div class="float-child">
+            <div class="prof-text">
+              <p><b><?php echo $_SESSION['User_Name']?></b></p>
+              <small><?php echo $_SESSION['User_Contact_Number']?></small>
+            </div>
+          </div>
+  
+      </div>
+  
+      <div class="menu">
+        <div>
+          <a href="user-dashboard-donate.php" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
         </div>
-
-    </div>
-
-    <div class="menu">
-      <div class="donate">
-        <a href="user-dashboard-donate.php" id="first-sidebar" class="a"><img src="icons/menu/medical-center.png">Donate</a>
-      </div>
-      <div class="request">
-        <a href="user-dashboard-request.php" class="a"><img src="icons/menu/volunteer.png">Request</a>
-      </div>
-      <div class="search">
-        <a href="user-dashboard.php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
-      </div>
-      <div class="sidebar-bottom">
-        <table>
-          <th><a href="logout.php" id="log-out">Log-out</a></th>
-        </table>
+        <div class="request">
+          <a href="user-dashboard-request.php" id="second-sidebar" class="a"><img src="icons/menu/volunteer.png">Request</a>
+        </div>
+        <div class="search">
+          <a href="user-dashboard.php" id="third-sidebar" class="a"><img src="icons/menu/blood-transfusion.png">Search</a>
+        </div>
+        <div class="sidebar-bottom">
+          <table>
+            <th><a href="logout.php" id="log-out">Log-out</a></th>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
 
   <div class="content">
     <form method ="post" action="php/request.php">
