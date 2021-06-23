@@ -268,8 +268,17 @@
       <div class="hospital">
         <h3>Hospital</p>
           <select name="location" id="dropdown">
-            <option value="Westminster">Westminster</option>
-          </select>
+            <?php
+              $conn = new mysqli('localhost', 'root', '', 'blood_donation_sys') 
+              or die ('Cannot connect to db');
+              $result = $conn->query("SELECT Hospital_ID, Hospital_Name from hospital");
+              while ($row = $result->fetch_assoc()) {
+                  unset($id, $name);
+                  $name = $row['Hospital_Name']; 
+                  echo '<option value="'.$name.'">'.$name.'</option>';
+              }
+    echo "</select>";
+          ?>
       </div>
     </div>
     <div class="appointment">
