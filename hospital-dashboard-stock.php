@@ -21,8 +21,6 @@
       $BID = $arr["BloodGroups_ID"];
     }
     $sql_type = "SELECT * FROM blood_groups WHERE BloodGroups_ID = '$BID'";
-    if($get_t = mysqli_query($conn,$sql_type)) 
-      $type = mysqli_fetch_assoc($get_t);
   }
 ?>
 <html>
@@ -88,25 +86,29 @@
           else return "Available";
         }
 
-        $sql = "SELECT * FROM blood_groups WHERE BloodGroups_ID = '$BID'"; 
-        $result = mysqli_query($conn,$sql);
+        function check_val($arr){
+          if($arr == NULL) return 0;
+          else return $arr;
+        }
 
-        if($result->num_rows>0){
-          while($row=$result->fetch_assoc()){
-            echo "<tr><td>A+</td><td>".get_stat(intval($type["A+"]))."</td><td>".$type["A+"]."</td></tr>
-            <tr><td>A-</td><td>".get_stat(intval($type["A-"]))."</td><td>".$type["A-"]."</td></tr>
-            <tr><td>B+</td><td>".get_stat(intval($type["B+"]))."</td><td>".$type["B+"]."</td></tr>
-            <tr><td>B-</td><td>".get_stat(intval($type["B-"]))."</td><td>".$type["B-"]."</td></tr>
-            <tr><td>AB+</td><td>".get_stat(intval($type["AB+"]))."</td><td>".$type["AB+"]."</td></tr>
-            <tr><td>AB-</td><td>".get_stat(intval($type["AB-"]))."</td><td>".$type["AB-"]."</td></tr>
-            <tr><td>O+</td><td>".get_stat(intval($type["O+"]))."</td><td>".$type["O+"]."</td></tr>
-            <tr><td>O-</td><td>".get_stat(intval($type["O-"]))."</td><td>".$type["O-"]."</td></tr>";
+      if($get_t = mysqli_query($conn,$sql_type)){
+        if($get_t->num_rows>0){
+          if($type=$get_t->fetch_assoc()){
+            echo "<tr><td>A+</td><td>".get_stat(intval($type["A+"]))."</td><td>".check_val($type["A+"])."</td></tr>
+            <tr><td>A-</td><td>".get_stat(intval($type["A-"]))."</td><td>".check_val($type["A-"])."</td></tr>
+            <tr><td>B+</td><td>".get_stat(intval($type["B+"]))."</td><td>".check_val($type["B+"])."</td></tr>
+            <tr><td>B-</td><td>".get_stat(intval($type["B-"]))."</td><td>".check_val($type["B-"])."</td></tr>
+            <tr><td>AB+</td><td>".get_stat(intval($type["AB+"]))."</td><td>".check_val($type["AB+"])."</td></tr>
+            <tr><td>AB-</td><td>".get_stat(intval($type["AB-"]))."</td><td>".check_val($type["AB-"])."</td></tr>
+            <tr><td>O+</td><td>".get_stat(intval($type["O+"]))."</td><td>".check_val($type["O+"])."</td></tr>
+            <tr><td>O-</td><td>".get_stat(intval($type["O-"]))."</td><td>".check_val($type["O-"])."</td></tr>";
           }
           echo"</table>";
         }
         else{
           echo "0 result";
         }
+      }
         mysqli_close($conn);
         ?>
   </div>

@@ -10,8 +10,21 @@
         echo '</script>';
     }
 
-  if(isset($_SESSION['Hospital_Name']) && isset($_SESSION['Hospital_ID'])){
 
+  if(isset($_SESSION['Hospital_Name']) && isset($_SESSION['Hospital_ID'])){
+    include 'php/db_conn.php';
+
+    $Hosp_Name = $_SESSION['Hospital_Name'];
+    $HID = $_SESSION['Hospital_ID'];
+
+    $sql_bid = "SELECT BloodGroups_ID FROM stocks WHERE Hospital_ID = '$HID'";
+    if($get_bid = mysqli_query($conn,$sql_bid)){
+      $arr = mysqli_fetch_assoc($get_bid);
+      $BID = $arr["BloodGroups_ID"];
+    }
+    $sql_type = "SELECT * FROM blood_groups WHERE BloodGroups_ID = '$BID'";
+    if($get_t = mysqli_query($conn,$sql_type)) 
+      $type = mysqli_fetch_assoc($get_t);
 ?>
 
 <html>
@@ -74,7 +87,6 @@
               $get_data = mysqli_query($conn,$sql);
               $arr = mysqli_fetch_array($get_data);
               echo $arr[0];
-              mysqli_close($conn);
             ?></p></b>
           </div>
         </td>
@@ -93,27 +105,27 @@
               <table class="in-stock-tab">
                 <tr>
                   <td class="blood-type">O+</td>
-                  <td>10</td>
+                  <td><?php echo $type["O+"]; ?></td>
                   <td class="blood-type">AB+</td>
-                  <td>10</td>
+                  <td><?php echo $type["AB+"]; ?></td>
                 </tr>
                 <tr>
                   <td class="blood-type">O-</td>
-                  <td>2</td>
+                  <td><?php echo $type["O-"]; ?></td>
                   <td class="blood-type">AB-</td>
-                  <td>2</td>
+                  <td><?php echo $type["AB-"]; ?></td>
                 </tr>
                 <tr>
                   <td class="blood-type">A+</td>
-                  <td>3</td>
+                  <td><?php echo $type["A+"]; ?></td>
                   <td class="blood-type">B+</td>
-                  <td>3</td>
+                  <td><?php echo $type["B+"]; ?></td>
                 </tr>
                 <tr>
                   <td class="blood-type">A-</td>
-                  <td>8</td>
+                  <td><?php echo $type["A-"]; ?></td>
                   <td class="blood-type">B-</td>
-                  <td>8</td>
+                  <td><?php echo $type["B-"]; ?></td>
                 </tr>
               </table>
             </div>

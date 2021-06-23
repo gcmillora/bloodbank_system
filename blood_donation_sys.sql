@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2021 at 07:47 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.16
+-- Generation Time: Jun 23, 2021 at 09:10 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,6 +59,14 @@ CREATE TABLE `blood_groups` (
   `O-` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `blood_groups`
+--
+
+INSERT INTO `blood_groups` (`BloodGroups_ID`, `A+`, `A-`, `B+`, `B-`, `AB+`, `AB-`, `O+`, `O-`) VALUES
+(1, 10, 5, 19, 3, 11, 1, 32, 2),
+(6, 26, 6, 7, 20, 11, 14, 2, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -71,6 +79,14 @@ CREATE TABLE `donation` (
   `Hospital_ID` int(11) NOT NULL,
   `Appointment_Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `donation`
+--
+
+INSERT INTO `donation` (`Donate_ID`, `User_ID`, `Hospital_ID`, `Appointment_Date`) VALUES
+(1, 22, 0, '2021-06-25'),
+(2, 22, 2, '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -92,7 +108,8 @@ CREATE TABLE `hospital` (
 --
 
 INSERT INTO `hospital` (`Hospital_ID`, `Hospital_Name`, `Hospital_Address`, `Hospital_Contact_Number`, `Hospital_Password`, `Hospital_Email_Address`) VALUES
-(1, 'Hentai Hospital', 'hentai', 911, 'savelives', 'drewzy@gmail.com');
+(1, 'Hentai Hospital', 'hentai', 911, 'savelives', 'drewzy@gmail.com'),
+(2, 'Westminster', 'Unahan sa Agdao', 69, 'hotdog', 'hot@dog');
 
 -- --------------------------------------------------------
 
@@ -118,6 +135,14 @@ CREATE TABLE `stocks` (
   `BloodGroups_ID` int(11) NOT NULL,
   `Status` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stocks`
+--
+
+INSERT INTO `stocks` (`Stock_ID`, `Hospital_ID`, `BloodGroups_ID`, `Status`) VALUES
+(2, 1, 1, 'Available'),
+(3, 2, 6, 'Available');
 
 -- --------------------------------------------------------
 
@@ -217,19 +242,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
-  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `BloodGroups_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `Donate_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Donate_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `request`
@@ -241,7 +266,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Stock_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
