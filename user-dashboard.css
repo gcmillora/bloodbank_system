@@ -181,7 +181,7 @@
       padding: 0.9375em;
     }
 
-    #table-hosp th span:hover{
+    table.table-content th span:hover{
       cursor:pointer;
     }
 

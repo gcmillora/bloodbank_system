@@ -306,7 +306,3 @@ function showResult_users(value){
     }
   });
 }
-
-function showSuggestion(value){
-
-}

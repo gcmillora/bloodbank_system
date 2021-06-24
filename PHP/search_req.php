@@ -47,7 +47,7 @@
             echo $html;
         }
         else{
-            echo "";
+            echo "<tr><td></td><td>0 results</td></tr>";
         }
         mysqli_close($conn);
     }

@@ -10,7 +10,7 @@
     ORDER BY ".$columnName." ASC"; 
     $result = $conn->query($sql);
 
-    if($result->num_rows>0){
+    if($result !== false && $result->num_rows>0){
         while($row=$result->fetch_assoc()){
             $html .="<tr><td>".$row["User_Name"]."</td>
             <td>".$row["User_Address"]."</td>
@@ -20,5 +20,5 @@
         }
         echo $html;
     }
-    else echo "0 results";
+    else echo "<tr><td></td><td>0 results</td></tr>";
 ?>

@@ -12,7 +12,7 @@ $sql = "SELECT Hospital_Name,
     ORDER BY ".$columnName." ASC"; 
 $result = $conn->query($sql);
 
-if($result->num_rows>0){
+if($result !== false && $result->num_rows>0){
     while($row=$result->fetch_assoc()){
         $html .= "<tr><td>".$row["Hospital_Name"]."</td>
         <td>". $row["Hospital_Address"]."</td>
@@ -20,7 +20,7 @@ if($result->num_rows>0){
     }
     echo $html;
 }
-else echo "0 results";
+else echo "<tr><td></td><td>0 results</td></tr>";
 mysqli_close($conn);
 
 ?>
