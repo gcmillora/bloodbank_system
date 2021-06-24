@@ -72,6 +72,7 @@
         <th>Location</th>
         <th>Blood Type</th>
         <th>Sex</th>
+        <th>Status</th>
       </tr>
       <?php
         include 'php/db_conn.php';
