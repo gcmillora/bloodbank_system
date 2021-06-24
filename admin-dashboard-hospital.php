@@ -95,10 +95,7 @@
 
     .sidebar-bottom{
       position: absolute;
-      top: 35em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
+      top: 40em;
     }
 
     .sidebar-bottom a{
@@ -210,12 +207,12 @@
     /*Padding for title of table and Search*/
     .table-header{
       padding-top: 1.5em;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
+      padding-left: 20em;
     }
 
      /* Search box padding*/
     #search-box{
-      /*padding-left: 34.375em;*/
       position: absolute;
       right: 10em;
     }
@@ -342,7 +339,6 @@
       </div>
       <div class="sidebar-bottom">
         <table>
-          <th><a href="#">Settings</a></th>
           <th><a href="logout.php" id="log-out">Log-out</a></th>
         </table>
       </div>
@@ -388,7 +384,6 @@
   <div class="table-header">
     <table>
       <th><h2> Hospitals</h2></th>
-      <th id="search-box"><input type="text" placeholder="Search..."></th>
     </table>
   </div>
   <div class="content">

@@ -80,7 +80,7 @@
       padding-top: 1.25em;
       padding-left: 20em;
     }
-    .dashboard{
+    .request{
       box-sizing: border-box;
       background-color: #D9595C;
       border-style: none;
@@ -89,16 +89,13 @@
       border-radius: 0.9375em;
     }
 
-    .dashboard a{
-      color:white;
+    .request a{
+      color: white;
     }
 
     .sidebar-bottom{
       position: absolute;
-      top: 35em;
-      left: 1em;
-      /*padding-left: 0.9375em;
-      padding-top: 14em;*/
+      top: 40em;
     }
 
     .sidebar-bottom a{
@@ -112,7 +109,6 @@
     }
 
     .float-container {
-      /*border: 3px solid #fff;*/
       padding-top: 20px;
       padding-left: 30px;
       padding-bottom: 50px;
@@ -327,7 +323,6 @@
       </div>
       <div class="sidebar-bottom">
         <table>
-          <th><a href="#">Settings</a></th>
           <th><a href="logout.php" id="log-out">Log-out</a></th>
         </table>
       </div>
@@ -365,7 +360,6 @@
   <div class="table-header">
     <table>
       <th><h2> Hospitals</h2></th>
-      <th id="search-box"><input type="text" placeholder="Search..."></th>
     </table>
   </div>
   <div class="content">

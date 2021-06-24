@@ -64,8 +64,6 @@
     <div class="table-header">
       <table>
         <th><h2> Requested</h2></th>
-        <th id="filter"><button type="button"><img src="icons/hospital-dashboard/filter.png">Filter</button></th>
-        <th id="search-box"><input type="text" placeholder="Search..."></th>
       </table>
     </div>
     <table class="table-content" style="width: 90%" id="table-requested">

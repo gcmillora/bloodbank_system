@@ -58,11 +58,10 @@
   <div class="header">
   </div>
 
-  <!--Title of table w/ Search-->
+  <!--Title of table-->
   <div class="table-header">
     <table>
       <th><h2> Hospitals</h2></th>
-      <th id="search-box"><input type="text" placeholder="Search..."></th>
     </table>
   </div>
 
