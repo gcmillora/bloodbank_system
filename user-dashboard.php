@@ -80,7 +80,6 @@
       </tr>
       <?php
         include 'php/db_conn.php';
-
         $sql = "SELECT Hospital_Name,
         Hospital_Address, Hospital_Contact_Number FROM hospital
         ORDER BY Hospital_Name ASC"; 
@@ -89,9 +88,9 @@
         if($result->num_rows>0){
           while($row=$result->fetch_assoc()){
       ?>
-            <tr><td><?php echo $row["Hospital_Name"]; ?></td>
-                <td><?php echo $row["Hospital_Address"]; ?></td>
-                <td><?php echo $row["Hospital_Contact_Number"]; ?></td></tr>
+        <tr><td><?php echo $row["Hospital_Name"]; ?></td>
+        <td><?php echo $row["Hospital_Address"]; ?></td>
+        <td><?php echo $row["Hospital_Contact_Number"]; ?></td></tr>
       <?php
           }
         }

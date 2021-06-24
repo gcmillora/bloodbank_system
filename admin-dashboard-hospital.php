@@ -196,6 +196,10 @@
 
     }
 
+    #table-hosp th span:hover{
+      cursor:pointer;
+    }
+
 
     /*Overview*/
     .overview{
@@ -312,6 +316,8 @@
       }
 
   </style>
+  <script src='js/jquery-3.6.0.min.js' type='text/javascript'></script>
+  <script src='js/order.js' type='text/javascript'></script>
 </head>
 <body>
   <!--MENU-->
@@ -387,46 +393,44 @@
     </table>
   </div>
   <div class="content">
-    <table class="table-content" style="width: 90%">
+    <input type='hidden' id='sort_hosp' value='DESC'>
+    <input type='hidden' id='sort_loc' value='DESC'>
+    <input type='hidden' id='sort_num' value='DESC'>
+    <table class="table-content" style="width: 90%" id="table-hosp">
       <tr>
-        <th>Hospital Name</th>
-        <th>Location</th>
-        <th>Contact Number</th>
+        <th><span onclick='sortHosp("Hospital_Name");'>Hospital Name</span></th>
+        <th><span onclick='sortHosp("Hospital_Address");'>Location</span></th>
+        <th><span onclick='sortHosp("Hospital_Contact_Number");'>Contact Number</span></th>
       </tr>
-        <?php
-        $conn = mysqli_connect("localhost","root","","blood_donation_sys");
-        if($conn->connect_error){ 
-          die("Connection failed:".$conn->connect_error); 
-        } 
+      <?php
+        include 'php/db_conn.php';
+
         $sql = "SELECT Hospital_Name,
-        Hospital_Address, Hospital_Contact_Number FROM hospital"; 
+        Hospital_Address, Hospital_Contact_Number FROM hospital
+        ORDER BY Hospital_Name ASC"; 
         $result = $conn->query($sql);
 
         if($result->num_rows>0){
           while($row=$result->fetch_assoc()){
-            echo "<tr><td>".$row["Hospital_Name"]."</td><td>".$row["Hospital_Address"]."</td><td>".$row["Hospital_Contact_Number"]."</td></tr>";
+      ?>
+        <tr><td><?php echo $row["Hospital_Name"]; ?></td>
+            <td><?php echo $row["Hospital_Address"]; ?></td>
+            <td><?php echo $row["Hospital_Contact_Number"]; ?></td></tr>
+      <?php
           }
-          echo"</table>";
         }
         else{
           echo "0 result";
         }
         $conn->close();
-        ?>
+      ?>
+    </table>
   </div>
-
-  
-  
 </body>
 </html>
-
 <?php
-
 }else{
   send_alert_error("Session Invalid");
 }
-
-
-
 ?>
 

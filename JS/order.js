@@ -185,3 +185,76 @@ function sortHosp(columnName){
     }
   });
 }
+
+function sortUser(columnName){
+  var sort, opp;
+  var col = 0;
+  switch(columnName){
+    case "User_Name":
+      sort = $("#sort_name").val();
+      $("#sort_address").val("ASC");
+      $("#sort_num").val("ASC");
+      $("#sort_btype").val("ASC");
+      $("#sort_age").val("ASC");
+      col = 1;
+      break;
+    case "User_Address":
+      sort = $("#sort_address").val();
+      $("#sort_name").val("ASC");
+      $("#sort_num").val("ASC");
+      $("#sort_btype").val("ASC");
+      $("#sort_age").val("ASC");
+      col = 2;
+      break;
+    case "User_Contact_Number":
+      sort = $("#sort_num").val();
+      $("#sort_name").val("ASC");
+      $("#sort_address").val("ASC");
+      $("#sort_btype").val("ASC");
+      $("#sort_age").val("ASC");
+      col = 3;
+      break;
+    case "User_Blood_Type":
+      sort = $("#sort_btype").val();
+      $("#sort_name").val("ASC");
+      $("#sort_address").val("ASC");
+      $("#sort_num").val("ASC");
+      $("#sort_age").val("ASC");
+      col = 4;
+      break;
+    case "User_Age":
+      sort = $("#sort_age").val();
+      $("#sort_name").val("ASC");
+      $("#sort_address").val("ASC");
+      $("#sort_btype").val("ASC");
+      $("#sort_num").val("ASC");
+      col = 5;
+      break;
+  }
+  if(sort == "ASC") opp = "DESC";
+  else opp = "ASC";
+  $.ajax({
+    url:'php/fetch_admin.php',
+    type:'POST',
+    data:{columnName:columnName,sort:sort},
+    success: function(response){
+      $("#table-users tr:not(:first)").remove();
+      $("#table-users").append(response);
+      switch(col){
+        case 1: $("#sort_name").val(opp);
+          break;
+        case 2: $("#sort_address").val(opp);
+          break;
+        case 3: $("#sort_num").val(opp);
+          break;
+        case 4: $("#sort_btype").val(opp);
+          break;
+        case 5: $("#sort_age").val(opp);
+          break;
+      }
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
+    }
+  });
+}

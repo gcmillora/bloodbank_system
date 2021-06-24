@@ -253,6 +253,9 @@
       border-bottom: 0.0625em solid #E0E0E0;
     }
 
+    #table-users th span:hover{
+      cursor:pointer;
+    }
 
     #filter{
       padding-left: 130px;
@@ -297,6 +300,8 @@
       }
 
   </style>
+  <script src='js/jquery-3.6.0.min.js' type='text/javascript'></script>
+  <script src='js/order.js' type='text/javascript'></script>
 </head>
 <body>
   <!--MENU-->
@@ -338,16 +343,16 @@
           <div class="totalusers row">
             <div class="column">
             <?php
-                $conn = mysqli_connect("localhost","root","","blood_donation_sys");
-                if($conn->connect_error){ 
-                  die("Connection failed:".$conn->connect_error); 
-                } 
-                $sql = "SELECT * FROM user"; 
-                $result = $conn->query($sql);
-                if ($result=mysqli_query($conn,$sql)) {
-                     $rowcount=mysqli_num_rows($result);
-                    echo "<b><h2 id='total-user-number'>".$rowcount."</h2></b>";
-                }
+              $conn = mysqli_connect("localhost","root","","blood_donation_sys");
+              if($conn->connect_error){ 
+                die("Connection failed:".$conn->connect_error); 
+              } 
+              $sql = "SELECT * FROM user"; 
+              $result = $conn->query($sql);
+              if ($result=mysqli_query($conn,$sql)) {
+                    $rowcount=mysqli_num_rows($result);
+                  echo "<b><h2 id='total-user-number'>".$rowcount."</h2></b>";
+              }
             ?>
             </div>
             <div class="column" style="margin-top: 35px"> 
@@ -364,50 +369,49 @@
     </table>
   </div>
   <div class="content">
-    <table class="table-content" style="width: 90%">
+    <input type='hidden' id='sort_name' value='DESC'>
+    <input type='hidden' id='sort_address' value='DESC'>
+    <input type='hidden' id='sort_num' value='DESC'>
+    <input type='hidden' id='sort_btype' value='DESC'>
+    <input type='hidden' id='sort_age' value='DESC'>
+    <table class="table-content" style="width: 90%" id="table-users">
       <tr>
-        <th>Full Name</th>
-        <th>Address</th>
-        <th>Contact Number</th>
-        <th>Blood Type</th>
-        <th>Age</th>
+        <th><span onclick='sortUser("User_Name");'>Full Name</span></th>
+        <th><span onclick='sortUser("User_Address");'>Address</span></th>
+        <th><span onclick='sortUser("User_Contact_Number");'>Contact Number</span></th>
+        <th><span onclick='sortUser("User_Blood_Type");'>Blood Type</span></th>
+        <th><span onclick='sortUser("User_Age");'>Age</span></th>
       </tr>
         <?php
-        $conn = mysqli_connect("localhost","root","","blood_donation_sys");
-        if($conn->connect_error){ 
-          die("Connection failed:".$conn->connect_error); 
-        } 
-        $sql = "SELECT User_Name,
-        User_Address, User_Contact_Number,User_Blood_Type,User_Age FROM user"; 
-        $result = $conn->query($sql);
-
-        if($result->num_rows>0){
-          while($row=$result->fetch_assoc()){
-            echo "<tr><td>".$row["User_Name"]."</td><td>".$row["User_Address"]."</td><td>".$row["User_Contact_Number"]."</td><td>".$row["User_Blood_Type"]."</td><td>".$row["User_Age"]."</td></tr>";
-          }
-          echo"</table>";
-        }
-        else{
-          echo "0 result";
-        }
-        $conn->close();
+          include 'php/db_conn.php';
+          $sql = "SELECT User_Name,
+          User_Address, User_Contact_Number,User_Blood_Type,User_Age FROM user
+          ORDER BY User_Name ASC"; 
+          if($result = $conn->query($sql)){
+            if($result->num_rows>0){
+              while($row=$result->fetch_assoc()){
         ?>
+          <tr><td><?php echo $row["User_Name"]; ?></td>
+          <td><?php echo $row["User_Address"]; ?></td>
+          <td><?php echo $row["User_Contact_Number"]; ?></td>
+          <td><?php echo $row["User_Blood_Type"]; ?></td>
+          <td><?php echo $row["User_Age"]; ?></td></tr>
+        <?php
+              }
+            }
+            else echo "0 result";
+          }
+          else echo "Error";
+          $conn->close();
+        ?>
+    </table>
   </div>
-
-  
-  
 </body>
 </html>
-
-
-
 <?php
 }else{
     send_alert_error("Session Invalid");
-
 }
-
-
 ?>
 
 
