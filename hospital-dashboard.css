@@ -219,7 +219,6 @@
       border-collapse: separate;
       border-spacing: 0;
       text-align: center;
-      
     }
 
     table.table-content th{
@@ -251,7 +250,11 @@
       border-bottom: 0.0625em solid #E0E0E0;
     }
 
+    #table-requested th span:hover{
+      cursor:pointer;
+    }
 
+    
     #filter{
       padding-left: 450px;
     }

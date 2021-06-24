@@ -29,6 +29,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="hospital-dashboard.css">
   <link rel="stylesheet" href="hospital-dashboard-stock.css">
+  <script src='js/jquery-3.6.0.min.js' type='text/javascript'></script>
+  <script src='js/order.js' type='text/javascript'></script>
   <title>Stocks</title>
 </head>
 <body>
@@ -71,11 +73,14 @@
         <th><h2>Stocks</h2></th>
       </table>
     </div>
+    <input type='hidden' id='sort_btype' value='ASC'>
+    <input type='hidden' id='sort_stat' value='DESC'>
+    <input type='hidden' id='sort_q' value='DESC'>
     <table class="table-content" style="width: 90%" id="table-requested">
       <tr class="table-row">
-        <th>Blood Type</th>
-        <th>Status</th>
-        <th>Quantity</th>
+        <th><span onclick='sortStk("btype");'>Blood Type</span></th>
+        <th><span onclick='sortStk("stat");'>Status</span></th>
+        <th><span onclick='sortStk("q");'>Quantity</span></th>
       </tr>
       <?php
         include 'php/db_conn.php';
@@ -92,16 +97,17 @@
       if($get_t = mysqli_query($conn,$sql_type)){
         if($get_t->num_rows>0){
           if($type=$get_t->fetch_assoc()){
-            echo "<tr><td>A+</td><td>".get_stat(intval($type["A+"]))."</td><td>".check_val($type["A+"])."</td></tr>
-            <tr><td>A-</td><td>".get_stat(intval($type["A-"]))."</td><td>".check_val($type["A-"])."</td></tr>
-            <tr><td>B+</td><td>".get_stat(intval($type["B+"]))."</td><td>".check_val($type["B+"])."</td></tr>
-            <tr><td>B-</td><td>".get_stat(intval($type["B-"]))."</td><td>".check_val($type["B-"])."</td></tr>
-            <tr><td>AB+</td><td>".get_stat(intval($type["AB+"]))."</td><td>".check_val($type["AB+"])."</td></tr>
-            <tr><td>AB-</td><td>".get_stat(intval($type["AB-"]))."</td><td>".check_val($type["AB-"])."</td></tr>
-            <tr><td>O+</td><td>".get_stat(intval($type["O+"]))."</td><td>".check_val($type["O+"])."</td></tr>
-            <tr><td>O-</td><td>".get_stat(intval($type["O-"]))."</td><td>".check_val($type["O-"])."</td></tr>";
+      ?>
+            <tr><td>A+</td><td><?php echo get_stat(intval($type["A+"])) ?></td><td><?php echo check_val($type["A+"])?></td></tr>
+            <tr><td>A-</td><td><?php echo get_stat(intval($type["A-"])) ?></td><td><?php echo check_val($type["A-"])?></td></tr>
+            <tr><td>B+</td><td><?php echo get_stat(intval($type["B+"]))?></td><td><?php echo check_val($type["B+"])?></td></tr>
+            <tr><td>B-</td><td><?php echo get_stat(intval($type["B-"]))?></td><td><?php echo check_val($type["B-"])?></td></tr>
+            <tr><td>AB+</td><td><?php echo get_stat(intval($type["AB+"]))?></td><td><?php echo check_val($type["AB+"])?></td></tr>
+            <tr><td>AB-</td><td><?php echo get_stat(intval($type["AB-"]))?></td><td><?php echo check_val($type["AB-"])?></td></tr>
+            <tr><td>O+</td><td><?php echo get_stat(intval($type["O+"]))?></td><td><?php echo check_val($type["O+"])?></td></tr>
+            <tr><td>O-</td><td><?php echo get_stat(intval($type["O-"]))?></td><td><?php echo check_val($type["O-"])?></td></tr>
+      <?php
           }
-          echo"</table>";
         }
         else{
           echo "0 result";
@@ -109,6 +115,7 @@
       }
         mysqli_close($conn);
         ?>
+    </table>
   </div>
 </body>
 </html>

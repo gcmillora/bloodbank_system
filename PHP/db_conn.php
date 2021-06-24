@@ -8,7 +8,6 @@
     $conn = mysqli_connect($sname,$uname,$password,$db_name) or die("Connection to database failed");
 
     if(!$conn){
-        echo "Connection failure!";
-        exit();
+        die("Connection failure!");
     }
 ?>

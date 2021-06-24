@@ -33,6 +33,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="hospital-dashboard.css">
   <link rel="stylesheet" href="hospital-dashboard-home.css">
+  <script src='js/jquery-3.6.0.min.js' type='text/javascript'></script>
+  <script src='js/order.js' type='text/javascript'></script>
   <title>Hospital Dashboard</title>
 </head>
 <body>
@@ -132,31 +134,45 @@
         <th><h2> Requested</h2></th>
       </table>
     </div>
+    <input type='hidden' id='sort_name' value='DESC'>
+    <input type='hidden' id='sort_address' value='DESC'>
+    <input type='hidden' id='sort_blood_type' value='DESC'>
+    <input type='hidden' id='sort_sex' value='DESC'>
     <table class="table-content" style="width: 90%" id="table-requested">
       <tr class="table-row">
-        <th>Name</th>
-        <th>Location</th>
-        <th>Blood Type</th>
-        <th>Sex</th>
+        <th><span onclick='sortReq("user.User_Name");'>Name</span></th>
+        <th><span onclick='sortReq("user.User_Address");'>Location</span></th>
+        <th><span onclick='sortReq("user.User_Blood_Type");'>Blood Type</span></th>
+        <th><span onclick='sortReq("user.User_Sex");'>Sex</span></th>
+        <th>Status</th>
       </tr>
       <?php
         include 'php/db_conn.php';
         $sql = "SELECT user.User_Name,
-        user.User_Address, user.User_Blood_Type, user.User_Age FROM request
-        INNER JOIN user on request.User_ID=user.User_ID"; 
+        user.User_Address, user.User_Blood_Type, user.User_Sex FROM request
+        INNER JOIN user ON request.User_ID=user.User_ID
+        WHERE request.Hospital_ID = '$HID'
+        ORDER BY user.User_Name ASC"; 
         $result = mysqli_query($conn,$sql);
 
         if($result->num_rows>0){
           while($row=$result->fetch_assoc()){
-            echo "<tr><td>".$row["User_Name"]."</td><td>".$row["User_Address"]."</td><td>".$row["User_Blood_Type"]."</td><td>".$row["User_Age"]."</td></tr>";
+      ?>
+            <tr>
+              <td><?php echo $row["User_Name"]; ?></td>
+              <td><?php echo $row["User_Address"]; ?></td>
+              <td><?php echo $row["User_Blood_Type"]; ?></td>
+              <td><?php echo $row["User_Sex"]; ?></td>
+            </tr>
+      <?php
           }
-          echo"</table>";
         }
         else{
           echo "0 result";
         }
         mysqli_close($conn);
-        ?>
+      ?>
+    </table>
   </div>
 </body>
 </html>
