@@ -80,10 +80,10 @@
     <input type='hidden' id='sort_sex' value='DESC'>
     <table class="table-content" style="width: 90%" id="table-requested">
       <tr class="table-row">
-        <th><span onclick='sortReq("user.User_Name");'>Name</span></th>
-        <th><span onclick='sortReq("user.User_Address");'>Location</span></th>
-        <th><span onclick='sortReq("user.User_Blood_Type");'>Blood Type</span></th>
-        <th><span onclick='sortReq("user.User_Sex");'>Sex</span></th>
+        <th><span onclick='sortReq("user.User_Name","yes");'>Name</span></th>
+        <th><span onclick='sortReq("user.User_Address","yes");'>Location</span></th>
+        <th><span onclick='sortReq("user.User_Blood_Type","yes");'>Blood Type</span></th>
+        <th><span onclick='sortReq("user.User_Sex","yes");'>Sex</span></th>
         <th>Status</th>
       </tr>
       <?php

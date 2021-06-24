@@ -1,4 +1,4 @@
-function sortReq(columnName){
+function sortReq(columnName,req){
   var sort, opp;
   var col = 0;
   switch(columnName){
@@ -36,7 +36,7 @@ function sortReq(columnName){
   $.ajax({
     url:'php/fetch_req.php',
     type:'POST',
-    data:{columnName:columnName,sort:sort},
+    data:{columnName:columnName,sort:sort,req:req},
     success: function(response){
       $("#table-requested tr:not(:first)").remove();
       $("#table-requested").append(response);

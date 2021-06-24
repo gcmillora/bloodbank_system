@@ -140,15 +140,14 @@
     <input type='hidden' id='sort_sex' value='DESC'>
     <table class="table-content" style="width: 90%" id="table-requested">
       <tr class="table-row">
-        <th><span onclick='sortReq("user.User_Name");'>Name</span></th>
-        <th><span onclick='sortReq("user.User_Address");'>Location</span></th>
-        <th><span onclick='sortReq("user.User_Blood_Type");'>Blood Type</span></th>
-        <th><span onclick='sortReq("user.User_Sex");'>Sex</span></th>
-        <th>Status</th>
+        <th><span onclick='sortReq("user.User_Name","no");'>Name</span></th>
+        <th><span onclick='sortReq("user.User_Address","no");'>Location</span></th>
+        <th><span onclick='sortReq("user.User_Blood_Type","no");'>Blood Type</span></th>
+        <th><span onclick='sortReq("user.User_Sex","no");'>Sex</span></th>
       </tr>
       <?php
         include 'php/db_conn.php';
-        $sql = "SELECT user.User_Name,
+        $sql = "SELECT user.User_ID,user.User_Name,
         user.User_Address, user.User_Blood_Type, user.User_Sex FROM request
         INNER JOIN user ON request.User_ID=user.User_ID
         WHERE request.Hospital_ID = '$HID'

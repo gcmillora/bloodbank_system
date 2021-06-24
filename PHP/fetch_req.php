@@ -22,6 +22,7 @@
 
         $columnName = $_POST['columnName'];
         $sort = $_POST['sort'];
+        $req = $_POST['req'];
         $html = "";
         
         $sql = "SELECT user.User_ID,user.User_Name,
@@ -36,10 +37,12 @@
             <td>".$row["User_Name"]."</td>
             <td>".$row["User_Address"]."</td>
             <td>".$row["User_Blood_Type"]."</td>
-            <td>".$row["User_Sex"]."</td>
-            <td><button onclick='approve(".$BID.",".$row["User_ID"].",`".$row["User_Blood_Type"]."`);'>Approve</button>
-                <button onclick='reject(".$BID.",".$row["User_ID"].",`".$row["User_Blood_Type"]."`);'>Reject</button></td>
-            </tr>";
+            <td>".$row["User_Sex"]."</td>";
+                if($req == "yes"){
+                    $html .=  "<td><button onclick='approve(".$BID.",".$row["User_ID"].",`".$row["User_Blood_Type"]."`);'>Approve</button>
+                    <button onclick='reject(".$BID.",".$row["User_ID"].",`".$row["User_Blood_Type"]."`);'>Reject</button></td>
+                </tr>";
+                }
             }
             echo $html;
         }
