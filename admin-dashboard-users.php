@@ -192,6 +192,7 @@
     .table-header{
       padding-top: 1.5em;
       padding-bottom: 20px;
+      padding-left: 20em;
     }
 
      /* Search box padding*/
@@ -359,7 +360,7 @@
   </div>
   <div class="table-header">
     <table>
-      <th><h2> Hospitals</h2></th>
+      <th><h2>Users</h2></th>
     </table>
   </div>
   <div class="content">
