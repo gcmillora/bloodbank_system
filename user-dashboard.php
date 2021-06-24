@@ -69,6 +69,14 @@
 
   <!--Table-->
   <div class="content">
+  Search by <select name="filter"> 
+            <option value="Hospital_Name">Hospital</option>
+            <option value="Hospital_Address">Location</option>
+            <option value="Hospital_Contact_Number">Contact Number</option>
+          </select>
+    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
+    <button onclick="showResult_hosp(document.getElementById('tfield').value)">Search</button>
+    <button onclick='sortHosp("Hospital_Name");'>Reset</button>
     <input type='hidden' id='sort_hosp' value='DESC'>
     <input type='hidden' id='sort_loc' value='DESC'>
     <input type='hidden' id='sort_num' value='DESC'>

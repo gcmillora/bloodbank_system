@@ -74,6 +74,15 @@
         <th><h2> Requested</h2></th>
       </table>
     </div>
+    Search by <select name="filter"> 
+            <option value="user.User_Name">Name</option>
+            <option value="user.User_Address">Location</option>
+            <option value="user.User_Blood_Type">Blood Type</option>
+            <option value="user.User_Sex">Sex</option>
+          </select>
+    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
+    <button onclick="showResult(document.getElementById('tfield').value,'Y')">Search</button>
+    <button onclick='sortReq("user.User_Name","yes");'>Reset</button>
     <input type='hidden' id='sort_name' value='DESC'>
     <input type='hidden' id='sort_address' value='DESC'>
     <input type='hidden' id='sort_blood_type' value='DESC'>

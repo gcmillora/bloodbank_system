@@ -369,6 +369,16 @@
     </table>
   </div>
   <div class="content">
+    Search by <select name="filter"> 
+            <option value="User_Name">Full Name</option>
+            <option value="User_Address">Address</option>
+            <option value="User_Contact_Number">Contact Number</option>
+            <option value="User_Blood_Type">Blood Type</option>
+            <option value="User_Age">Age</option>
+          </select>
+    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
+    <button onclick="showResult_users(document.getElementById('tfield').value)">Search</button>
+    <button onclick='sortUser("User_Name");'>Reset</button>
     <input type='hidden' id='sort_name' value='DESC'>
     <input type='hidden' id='sort_address' value='DESC'>
     <input type='hidden' id='sort_num' value='DESC'>

@@ -258,3 +258,55 @@ function sortUser(columnName){
     }
   });
 }
+
+function showResult(value,req){
+  var filter = $('[name = filter]').val();
+  $.ajax({
+    url:'php/search_req.php',
+    type:'POST',
+    data:{filter:filter,value:value,req:req},
+    success: function(response){
+      $("#table-requested tr:not(:first)").remove();
+      $("#table-requested").append(response);
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
+    }
+  });
+}
+
+function showResult_hosp(value){
+  var filter = $('[name = filter]').val();
+  $.ajax({
+    url:'php/search_hosp.php',
+    type:'POST',
+    data:{filter:filter,value:value},
+    success: function(response){
+      $("#table-hosp tr:not(:first)").remove();
+      $("#table-hosp").append(response);
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
+    }
+  });
+}
+
+function showResult_users(value){
+  var filter = $('[name = filter]').val();
+  $.ajax({
+    url:'php/search_user.php',
+    type:'POST',
+    data:{filter:filter,value:value},
+    success: function(response){
+      $("#table-users tr:not(:first)").remove();
+      $("#table-users").append(response);
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
+    }
+  });
+}
+
+function showSuggestion(value){
+
+}
