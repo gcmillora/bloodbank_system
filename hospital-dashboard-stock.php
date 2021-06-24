@@ -73,7 +73,7 @@
         <th><h2>Stocks</h2></th>
       </table>
     </div>
-    <input type='hidden' id='sort_btype' value='ASC'>
+    <input type='hidden' id='sort_btype' value='DESC'>
     <input type='hidden' id='sort_stat' value='DESC'>
     <input type='hidden' id='sort_q' value='DESC'>
     <table class="table-content" style="width: 90%" id="table-requested">
