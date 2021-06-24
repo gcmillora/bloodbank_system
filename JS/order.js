@@ -50,6 +50,9 @@ function sortReq(columnName,req){
         case 4: $("#sort_sex").val(opp);
           break;
       }
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
     }
   });
 }
@@ -94,6 +97,9 @@ function sortStk(columnName){
         case 3: $("#sort_q").val(opp);
           break;
       }
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
     }
   });
 }
@@ -131,4 +137,51 @@ function reject(bid,uid,btype){
       }
     });
   }
+}
+
+function sortHosp(columnName){
+  var sort, opp;
+  var col = 0;
+  switch(columnName){
+    case "Hospital_Name":
+      sort = $("#sort_hosp").val();
+      $("#sort_loc").val("ASC");
+      $("#sort_num").val("ASC");
+      col = 1;
+      break;
+    case "Hospital_Address":
+      sort = $("#sort_loc").val();
+      $("#sort_hosp").val("ASC");
+      $("#sort_num").val("ASC");
+      col = 2;
+      break;
+    case "Hospital_Contact_Number":
+      sort = $("#sort_num").val();
+      $("#sort_hosp").val("ASC");
+      $("#sort_loc").val("ASC");
+      col = 3;
+      break;
+  }
+  if(sort == "ASC") opp = "DESC";
+  else opp = "ASC";
+  $.ajax({
+    url:'php/fetch_hosp.php',
+    type:'POST',
+    data:{columnName:columnName,sort:sort},
+    success: function(response){
+      $("#table-hosp tr:not(:first)").remove();
+      $("#table-hosp").append(response);
+      switch(col){
+        case 1: $("#sort_hosp").val(opp);
+          break;
+        case 2: $("#sort_loc").val(opp);
+          break;
+        case 3: $("#sort_num").val(opp);
+          break;
+      }
+    },
+    error: function(jqXHR,exception){
+      alert(jqXJR,"\n",exception);
+    }
+  });
 }
