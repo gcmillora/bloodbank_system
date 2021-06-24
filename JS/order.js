@@ -98,10 +98,6 @@ function sortStk(columnName){
   });
 }
 
-function send_alert(){
-  alert("wah");
-}
-
 function approve(bid,uid,btype){
   if(confirm("Approve?")){
     $.ajax({
@@ -111,7 +107,7 @@ function approve(bid,uid,btype){
       success: function(response){
         $("#table-requested tr:not(:first)").remove();
         $("#table-requested").append(response);
-        alert("Request Successful");
+        alert("Request Accepted");
       },
       error: function(jqXHR,exception){
         alert(jqXJR,"\n",exception);
@@ -120,5 +116,19 @@ function approve(bid,uid,btype){
   }
 }
 function reject(bid,uid,btype){
-  alert("Blood Type " + btype);
+  if(confirm("Reject?")){
+    $.ajax({
+      url:'php/assess_req.php',
+      type:'POST',
+      data:{bid:bid,uid:uid,btype:btype,res:"rejected"},
+      success: function(response){
+        $("#table-requested tr:not(:first)").remove();
+        $("#table-requested").append(response);
+        alert("Request Rejected");
+      },
+      error: function(jqXHR,exception){
+        alert(jqXJR,"\n",exception);
+      }
+    });
+  }
 }
