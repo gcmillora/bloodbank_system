@@ -44,11 +44,11 @@
                         $html .= "<tr><td>".$val."</td><td>". get_stat(intval($type[$val])) ."</td><td>". check_val($type[$val])."</td></tr>";
                         }
                     }
-                    else echo "";
+                    else echo "<tr><td></td><td>0 results</td></tr>";
                 }
-                else echo "";
+                else echo "<tr><td></td><td>0 results</td></tr>";
             }
-            else echo "";
+            else echo "<tr><td></td><td>0 results</td></tr>";
         }
         else{
             if($get_t = mysqli_query($conn,$sql_type)){
@@ -61,11 +61,11 @@
                         $html .= "<tr><td>".$blood."</td><td>". get_stat($val) ."</td><td>". check_val($val) ."</td></tr>";
                         }
                     }
-                    else echo "";
+                    else echo "<tr><td></td><td>0 results</td></tr>";
                 }
-                else echo "";
+                else echo "<tr><td></td><td>0 results</td></tr>";
             }
-            else echo "";
+            else echo "<tr><td></td><td>0 results</td></tr>";
         }
     }
     echo $html;

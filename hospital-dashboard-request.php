@@ -120,7 +120,7 @@
           }
         }
         else{
-          echo "0 result";
+          echo "<tr><td></td><td>0 results</td></tr>";
         }
         mysqli_close($conn);
       ?>

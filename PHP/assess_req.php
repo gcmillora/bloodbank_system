@@ -53,7 +53,7 @@
                         </tr>";
             }
             echo $html;
-        }else echo "not enough";
+        }else echo "<tr><td></td><td>0 results</td></tr>";
     }
     mysqli_close($conn);
 ?>

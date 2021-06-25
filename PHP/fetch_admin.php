@@ -19,5 +19,5 @@
         }
         echo $html;
     }
-    else echo "0 results";
+    else echo "<tr><td></td><td>0 results</td></tr>";
 ?>

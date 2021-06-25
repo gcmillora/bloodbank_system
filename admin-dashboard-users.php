@@ -409,9 +409,9 @@
         <?php
               }
             }
-            else echo "0 result";
+            else echo "<tr><td></td><td>0 results</td></tr>";
           }
-          else echo "Error";
+          else echo "<tr><td></td><td>0 results</td></tr>";
           $conn->close();
         ?>
     </table>
