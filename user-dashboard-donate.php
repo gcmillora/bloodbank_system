@@ -65,7 +65,7 @@
       <div class="contact-num">
         <h2>Contact Number</h2>
         <div class="contact">
-          +63 <input type="tel" name="contact-input">
+          <input type="tel" name="contact-input">
         </div>
       </div>
       <div class="first-question">
