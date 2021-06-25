@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <?php
   session_start();
-
-  function send_alert_error($message){
-        echo '<script language="javascript">';
-        echo 'alert("',$message,'");';
-        echo "window.location.href='../login.html';";
-        echo '</script>';
-    }
+  include 'php/send_alert_error.php';
+  // function send_alert_error($message){
+  //       echo '<script language="javascript">';
+  //       echo 'alert("',$message,'");';
+  //       echo "window.location.href='../login.html';";
+  //       echo '</script>';
+  //   }
 
   if(isset($_SESSION['Hospital_Name']) && isset($_SESSION['Hospital_ID'])){
     include 'php/db_conn.php';
@@ -21,7 +21,7 @@
       $BID = $arr["BloodGroups_ID"];
     }
     $sql_type = "SELECT * FROM blood_groups WHERE BloodGroups_ID = '$BID'";
-  }
+  
 ?>
 <html>
 <head>
@@ -119,3 +119,10 @@
   </div>
 </body>
 </html>
+<?php
+  }else{
+    send_alert_error("Session Invalid");
+  }
+
+
+?>
