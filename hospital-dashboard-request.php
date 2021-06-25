@@ -28,6 +28,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="hospital-dashboard.css">
   <link rel="stylesheet" href="hospital-dashboard-request.css">
+  <link rel="stylesheet" href="filter-search.css">
   <script src='js/jquery-3.6.0.min.js' type='text/javascript'></script>
   <script src='js/order.js' type='text/javascript'></script>
   <title>Requested</title>
@@ -74,19 +75,23 @@
         <th><h2> Requested</h2></th>
       </table>
     </div>
-    Search by <select name="filter"> 
-            <option value="user.User_Name">Name</option>
-            <option value="user.User_Address">Location</option>
-            <option value="user.User_Blood_Type">Blood Type</option>
-            <option value="user.User_Sex">Sex</option>
-          </select>
-    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
-    <button onclick="showResult(document.getElementById('tfield').value,'Y')">Search</button>
-    <button onclick='sortReq("user.User_Name","yes");'>Reset</button>
-    <input type='hidden' id='sort_name' value='DESC'>
-    <input type='hidden' id='sort_address' value='DESC'>
-    <input type='hidden' id='sort_blood_type' value='DESC'>
-    <input type='hidden' id='sort_sex' value='DESC'>
+    <div class="util-bar">
+      Search by
+      <span class="put-margins"> 
+      <select name="filter"> </span>
+          <option value="user.User_Name">Name</option>
+          <option value="user.User_Address">Location</option>
+          <option value="user.User_Blood_Type">Blood Type</option>
+          <option value="user.User_Sex">Sex</option>
+      </select>
+      <span class="put-margins"> <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)"></span>
+      <span class="put-margins"><button onclick="showResult(document.getElementById('tfield').value,'Y')">Search</button></span>
+      <span class="put-margins"> <button onclick='sortReq("user.User_Name","yes");'>Reset</button></span>
+      <input type='hidden' id='sort_name' value='DESC'>
+      <input type='hidden' id='sort_address' value='DESC'>
+      <input type='hidden' id='sort_blood_type' value='DESC'>
+      <input type='hidden' id='sort_sex' value='DESC'>
+    </div>
     <table class="table-content" style="width: 90%" id="table-requested">
       <tr class="table-row">
         <th><span onclick='sortReq("user.User_Name","yes");'>Name</span></th>

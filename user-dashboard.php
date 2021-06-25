@@ -18,6 +18,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="user-dashboard.css">
+  <link rel="stylesheet" href="filter-search.css">
   <script src='js/jquery-3.6.0.min.js' type='text/javascript'></script>
   <script src='js/order.js' type='text/javascript'></script>
   <title>User Dashboard</title>
@@ -69,17 +70,19 @@
 
   <!--Table-->
   <div class="content">
-  Search by <select name="filter"> 
-            <option value="Hospital_Name">Hospital</option>
-            <option value="Hospital_Address">Location</option>
-            <option value="Hospital_Contact_Number">Contact Number</option>
-          </select>
-    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
-    <button onclick="showResult_hosp(document.getElementById('tfield').value)">Search</button>
-    <button onclick='sortHosp("Hospital_Name");'>Reset</button>
-    <input type='hidden' id='sort_hosp' value='DESC'>
-    <input type='hidden' id='sort_loc' value='DESC'>
-    <input type='hidden' id='sort_num' value='DESC'>
+    <div class="util-bar">
+      Search by <span class="put-margins"> <select name="filter"> </span>
+              <option value="Hospital_Name">Hospital</option>
+              <option value="Hospital_Address">Location</option>
+              <option value="Hospital_Contact_Number">Contact Number</option>
+            </select>
+      <span class="put-margins"> <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)"></span>
+      <span class="put-margins"> <button onclick="showResult_hosp(document.getElementById('tfield').value)">Search</button></span>
+      <span class="put-margins"> <button onclick='sortHosp("Hospital_Name");'>Reset</button></span>
+      <input type='hidden' id='sort_hosp' value='DESC'>
+      <input type='hidden' id='sort_loc' value='DESC'>
+      <input type='hidden' id='sort_num' value='DESC'>
+    </div>
     <table class="table-content" style="width: 90%" id="table-hosp">
       <tr>
         <th><span onclick='sortHosp("Hospital_Name");'>Hospital</span></th>

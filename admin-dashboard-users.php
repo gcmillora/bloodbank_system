@@ -15,6 +15,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="filter-search.css">
   <title>Hospital Dashboard</title>
   <!-- CSS -->
   <style>
@@ -79,6 +80,7 @@
     .content{
       padding-top: 1.25em;
       padding-left: 20em;
+      padding-bottom: 5em;
     }
     .request{
       box-sizing: border-box;
@@ -369,21 +371,23 @@
     </table>
   </div>
   <div class="content">
-    Search by <select name="filter"> 
-            <option value="User_Name">Full Name</option>
-            <option value="User_Address">Address</option>
-            <option value="User_Contact_Number">Contact Number</option>
-            <option value="User_Blood_Type">Blood Type</option>
-            <option value="User_Age">Age</option>
-          </select>
-    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
-    <button onclick="showResult_users(document.getElementById('tfield').value)">Search</button>
-    <button onclick='sortUser("User_Name");'>Reset</button>
-    <input type='hidden' id='sort_name' value='DESC'>
-    <input type='hidden' id='sort_address' value='DESC'>
-    <input type='hidden' id='sort_num' value='DESC'>
-    <input type='hidden' id='sort_btype' value='DESC'>
-    <input type='hidden' id='sort_age' value='DESC'>
+    <div class="util-bar">
+      Search by <span class="put-margins"><select name="filter"></span>
+              <option value="User_Name">Full Name</option>
+              <option value="User_Address">Address</option>
+              <option value="User_Contact_Number">Contact Number</option>
+              <option value="User_Blood_Type">Blood Type</option>
+              <option value="User_Age">Age</option>
+            </select>
+      <span class="put-margins"><input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)"></span>
+      <span class="put-margins"><button onclick="showResult_users(document.getElementById('tfield').value)">Search</button></span>
+      <span class="put-margins"><button onclick='sortUser("User_Name");'>Reset</button></span>
+      <input type='hidden' id='sort_name' value='DESC'>
+      <input type='hidden' id='sort_address' value='DESC'>
+      <input type='hidden' id='sort_num' value='DESC'>
+      <input type='hidden' id='sort_btype' value='DESC'>
+      <input type='hidden' id='sort_age' value='DESC'>
+    </div>
     <table class="table-content" style="width: 90%" id="table-users">
       <tr>
         <th><span onclick='sortUser("User_Name");'>Full Name</span></th>

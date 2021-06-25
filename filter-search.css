@@ -1,0 +1,36 @@
+.util-bar{
+    padding-bottom: 20px;
+}
+  
+.util-bar select, input{
+    padding: 2px 3px 2px 3px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #acacac;
+    border-width: 2px;
+}
+
+.util-bar button{
+  background-color: #aaa8a8; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.util-bar button:hover{
+    background-color: #e6e6e6; /* Green */
+    border: #e6e6e6;
+    color: black;
+    padding: 5px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+.put-margins{
+    margin-left: 5px;
+}
+

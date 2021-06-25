@@ -15,6 +15,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="filter-search.css">
   <title>Hospital Dashboard</title>
   <!-- CSS -->
   <style>
@@ -79,6 +80,7 @@
     .content{
       padding-top: 1.25em;
       padding-left: 20em;
+      padding-bottom: 5em;
     }
     .dashboard{
       box-sizing: border-box;
@@ -240,7 +242,6 @@
       border-collapse: separate;
       border-spacing: 0;
       text-align: center;
-      
     }
 
     table.table-content th{
@@ -393,17 +394,19 @@
     </table>
   </div>
   <div class="content">
-  Search by <select name="filter"> 
-            <option value="Hospital_Name">Hospital</option>
-            <option value="Hospital_Address">Location</option>
-            <option value="Hospital_Contact_Number">Contact Number</option>
-          </select>
-    <input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)">
-    <button onclick="showResult_hosp(document.getElementById('tfield').value)">Search</button>
-    <button onclick='sortHosp("Hospital_Name");'>Reset</button>
-    <input type='hidden' id='sort_hosp' value='DESC'>
-    <input type='hidden' id='sort_loc' value='DESC'>
-    <input type='hidden' id='sort_num' value='DESC'>
+    <div class="util-bar">
+      Search by <span class="put-margins"><select name="filter"></span>
+              <option value="Hospital_Name">Hospital</option>
+              <option value="Hospital_Address">Location</option>
+              <option value="Hospital_Contact_Number">Contact Number</option>
+            </select>
+      <span class="put-margins"><input type ="text" size = "30" id="tfield" onkeyup="showSuggestion(this.value)"></span>
+      <span class="put-margins"> <button onclick="showResult_hosp(document.getElementById('tfield').value)">Search</button></span>
+      <span class="put-margins"> <button onclick='sortHosp("Hospital_Name");'>Reset</button></span>
+      <input type='hidden' id='sort_hosp' value='DESC'>
+      <input type='hidden' id='sort_loc' value='DESC'>
+      <input type='hidden' id='sort_num' value='DESC'>
+    </div>
     <table class="table-content" style="width: 90%" id="table-hosp">
       <tr>
         <th><span onclick='sortHosp("Hospital_Name");'>Hospital Name</span></th>
