@@ -3,12 +3,6 @@
 
   session_start();
   include 'php/send_alert_error.php';
-  // function send_alert_error($message){
-  //       echo '<script language="javascript">';
-  //       echo 'alert("',$message,'");';
-  //       echo "window.location.href='../login.html';";
-  //       echo '</script>';
-  //   }
 
 
   if(isset($_SESSION['Hospital_Name']) && isset($_SESSION['Hospital_ID'])){
