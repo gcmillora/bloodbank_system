@@ -1,6 +1,4 @@
-# bloodbank_system
-
-CMSC127 - Bloodbank Donation System
+# CMSC127 - Bloodbank Donation System
 
 A bloodbank donation management system using HTML/CSS/PHP and MySQL. There are 3 user types, specifically, the user, hospital and admin. Users can request or donate, while hospitals can see requests and the available stock of their hospital. Moreover, the admin can view the list of the hospitals and users in the database.
 
@@ -11,7 +9,7 @@ Some of the accounts available:<br />
     [HOSPITAL] spmc@gmail.com - 12345<br />
     [ADMIN] admin@gmail.com - admin<br /><br /><br />
     
-**Setup**
+###Setup
 
 After downloading the files from repository,<br />
   1.) Extract the contents of the zip file: "bloodbank_system-main". <br />
