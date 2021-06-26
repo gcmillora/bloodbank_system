@@ -13,4 +13,4 @@ Some of the accounts available:<br />
     **USER** - greg@gmail.com - 12345<br />
     **HOSPITAL** - spmc@gmail.com - 12345<br />
     **ADMIN** - admin@gmail.com - admin<br /><br /><br /><br />
-  For further questions, you can contact one of the contributors. 
+  For further questions, you can contact any of the contributors. 
