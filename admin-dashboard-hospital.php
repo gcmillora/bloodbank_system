@@ -111,7 +111,6 @@
     }
 
     .float-container {
-      /*border: 3px solid #fff;*/
       padding-top: 20px;
       padding-left: 30px;
       padding-bottom: 50px;
@@ -121,7 +120,6 @@
         width: 25%;
         float: left;
         padding: 10px ;
-        /*border: 2px solid red;*/
     }  
 
     .icon img{

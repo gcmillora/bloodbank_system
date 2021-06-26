@@ -120,7 +120,6 @@
         width: 25%;
         float: left;
         padding: 10px ;
-        /*border: 2px solid red;*/
     }  
 
     .icon img{
@@ -199,7 +198,6 @@
 
      /* Search box padding*/
     #search-box{
-      /*padding-left: 34.375em;*/
       position: absolute;
       right: 10em;
     }
