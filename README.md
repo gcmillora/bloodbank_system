@@ -8,9 +8,9 @@ As an extension to the included features of the project, we included actions lik
 
 After downloading the files from repository,<br />
   1.) Extract the contents of the zip file: "bloodbank_system-main". <br />
-  2.) Copy the "bloodbank_system-main" folder to htdocs folder in XAMPP.<br />
+  2.) Copy the "bloodbank_system-main" folder to htdocs folder in XAMPP.<br /><br />
 Some of the accounts available:<br />
-    [USER] greg@gmail.com - 12345<br />
-    [HOSPITAL] spmc@gmail.com - 12345<br />
-    [ADMIN] admin@gmail.com - admin<br /><br /><br />
+    **USER** - greg@gmail.com - 12345<br />
+    **HOSPITAL** - spmc@gmail.com - 12345<br />
+    **ADMIN** - admin@gmail.com - admin<br /><br /><br /><br />
   For further questions, you can contact one of the contributors. 
