@@ -9,7 +9,7 @@ Some of the accounts available:<br />
     [HOSPITAL] spmc@gmail.com - 12345<br />
     [ADMIN] admin@gmail.com - admin<br /><br /><br />
     
-### Setup
+## Setup
 
 After downloading the files from repository,<br />
   1.) Extract the contents of the zip file: "bloodbank_system-main". <br />
