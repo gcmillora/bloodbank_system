@@ -40,7 +40,6 @@
             <small>Davao City</small>
           </div>
         </div>
-
     </div>
 
     <div class="menu">
