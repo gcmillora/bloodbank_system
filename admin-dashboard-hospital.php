@@ -369,14 +369,7 @@
             </div>
           </div>
         </td>
-        <td>
-          <div class="total-outgoing">
-            <br>
-            <p id="total-complaints-number">4</p>
-            <p style="color: white">Complaints</p>
-          </div>
-        </td>
-      
+  
       </tr>
     </table>
   </div>
